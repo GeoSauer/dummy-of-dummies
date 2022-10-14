@@ -15,7 +15,7 @@
             defer
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
-        <script type="module" src="app.js"></script>
+        <script type="module" src="profile-editor.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,6 +28,8 @@
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/form.css" />
+        <link rel="stylesheet" href="profile-editor.css" />
         <!-- add link for page specific css -->
     </head>
 
@@ -38,7 +40,6 @@
             <nav>
                 <a href="/">Home</a>
                 <a id="sign-out-link" href="auth">Sign Out</a>
-                <a id="profile-editor" href="profile-editor">Edit Profile</a>
                 <a id="about" href="about">About</a>
             </nav>
         </header>
