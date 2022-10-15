@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Supabase Web App</title>
+        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+
+        <!-- js -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+        <script type="module" src="./question-editor.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <!-- add link for page specific css -->
+        <link rel="stylesheet" href="/question-editor/question-editor.css" />
+    </head>
+
+    <body>
+        <header class="page-header">
+            <img class="logo" src="/assets/html_css_js.png" alt="logo" />
+            <p class="title">coding for(dummy of dummies)</p>
+            <nav>
+                <a href="/">Home</a>
+                <a id="sign-out-link" href="/auth">Sign Out</a>
+                <a id="profile-editor" href="../profile-editor">Edit Profile</a>
+                <a id="about" href="../about">About</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="form-section">
+                <form id="question-form">
+                    <label>
+                        <p class="label-text">Question</p>
+                        <input
+                            name="question-input"
+                            type="text"
+                            required
+                            placeholder="What can we help you with?"
+                        />
+                    </label>
+                    <label>
+                        <p class="label-text">Category</p>
+                        <select name="category-select" id="category-select">
+                            <option value="">Select a Category</option>
+                        </select>
+                    </label>
+                    <label>
+                        <p class="label-text">Code</p>
+                        <textarea
+                            name="code-text-area"
+                            id="text-area"
+                            cols="30"
+                            rows="10"
+                        ></textarea>
+                    </label>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
