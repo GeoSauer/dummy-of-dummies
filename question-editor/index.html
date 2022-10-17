@@ -51,7 +51,7 @@
                     <label>
                         <p class="label-text">Question</p>
                         <input
-                            name="question-input"
+                            name="question-title"
                             type="text"
                             required
                             placeholder="What can we help you with?"
@@ -86,15 +86,17 @@
                     <label>
                         <p class="label-text">Query Screenshot</p>
                         <div id="screenshot-container">
-                            <input type="file" />
+                            <input id="image-input" name="image-input" type="file" />
                             <img
+                                id="image-preview"
                                 class="avatar"
-                                src="/assets/avatar.png"
+                                src="/assets/download.png"
                                 alt="image-upload-preview"
                             />
                         </div>
                     </label>
                     <button>Ask your question!</button>
+                    <p id="error-display"></p>
                 </form>
             </section>
         </main>

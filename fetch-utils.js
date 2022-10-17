@@ -54,3 +54,7 @@ export async function uploadImage(bucketName, imagePath, imageFile) {
 
     return url;
 }
+
+export async function createQuestion(question) {
+    return await client.from('questions').insert(question).single();
+}
