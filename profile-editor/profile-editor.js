@@ -1,7 +1,7 @@
 //Imports
 import '../auth/user.js';
 import { updateProfile, getProfile, getUser, uploadImage } from '../fetch-utils.js';
-// updateProfile, uploadImage
+
 const user = getUser();
 //DOM elements
 const profileForm = document.getElementById('profile-form');

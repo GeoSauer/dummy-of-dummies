@@ -46,7 +46,74 @@
         </header>
 
         <main>
-            <div id="question-display">Currently selected question will be displayed here</div>
+            <section class="question-summary">
+                <h1 id="question-title">Look at this post</h1>
+                <p id="question-category">JavaScript</p>
+                <p id="question-content">Mm mm so dang delicious</p>
+                <p id="question-code-snippet">code code cody code</p>
+                <img id="question-screenshot" src="../assets/avatar.png" alt="placeholder" />
+            </section>
+            <ul id="comment-list">
+                <li>
+                    <div class="user-info">
+                        <h2>username</h2>
+                        <p>avatar</p>
+                        <p>timestamp</p>
+                    </div>
+                    <div class="comment">
+                        <p>comment</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-info">
+                        <h2>username</h2>
+                        <p>avatar</p>
+                        <p>timestamp</p>
+                    </div>
+                    <div class="comment">
+                        <p>comment</p>
+                    </div>
+                </li>
+            </ul>
+            <ul id="answer-list">
+                <li>
+                    <div class="user-info">
+                        <h2>username</h2>
+                        <p>avatar</p>
+                        <p>timestamp</p>
+                    </div>                    
+                    <div class="answer">
+                        <p>answer</p>
+                        <p>code snippet</p>
+                        <img src="../assets/avatar.png">
+                    </div>
+                </li>
+                <li>
+                    <div class="user-info">
+                        <h2>username</h2>
+                        <p>avatar</p>
+                        <p>timestamp</p>
+                    </div>                    
+                    <div class="answer">
+                        <p>answer</p>
+                        <p>code snippet</p>
+                        <img src="../assets/avatar.png">
+                    </div>
+                </li>
+                <li>
+                    <div class="user-info">
+                        <h2>username</h2>
+                        <p>avatar</p>
+                        <p>timestamp</p>
+                    </div>                    
+                    <div class="answer">
+                        <p>answer</p>
+                        <p>code snippet</p>
+                        <img src="../assets/avatar.png">
+                    </div>
+                </li>
+            </ul>
+
             <section id="form-section">
                 <form id="comment-form">
                     <h3>Use this form to add a comment to the discussion:</h3>
@@ -59,7 +126,7 @@
                             placeholder="Enter your comment here..."
                         />
                     </label>
-                    <button>Submit your comment!</button>
+                    <button id="comment-button">Submit your comment!</button>
 
             <section id="form-section">
                 <form id="answer-form">
@@ -86,15 +153,17 @@
                     <label>
                         <p class="label-text">Answer Screenshot</p>
                         <div id="screenshot-container">
-                            <input type="file" />
+                            <input id="answer-image-input" name="image-input" type="file" />
                             <img
+                                id="preview"
                                 class="avatar"
                                 src="/assets/avatar.png"
                                 alt="image-upload-preview"
                             />
                         </div>
                     </label>
-                    <button>Submit your answer!</button>
+                    <button id="answer-button">Submit your answer!</button>
+                    <p id="error-display"></p>
                 </form>
             </section>
         </main>
