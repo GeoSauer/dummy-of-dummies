@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <!-- title and favicon -->
-        <title>Supabase Web App</title>
+        <title>Update Profile</title>
         <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
 
         <!-- js -->
@@ -35,8 +35,8 @@
 
     <body>
         <header class="page-header">
-            <img class="logo" src="/assets/html_css_js.png" alt="logo" />
-            <p class="title">Supabase Web App</p>
+            <!-- <img class="logo" src="/assets/html_css_js.png" alt="logo" />
+            <p class="title">Supabase Web App</p> -->
             <nav>
                 <a href="/">Home</a>
                 <a id="sign-out-link" href="../auth">Sign Out</a>
@@ -44,6 +44,29 @@
             </nav>
         </header>
 
-        <main></main>
+        <main>
+            <form id="profile-form">
+                <label
+                    >Username<input
+                        name="username-input"
+                        id="username-input"
+                        placeholder="Enter Username..."
+                        required
+                    />
+                </label>
+                <label
+                    >Bio<textarea
+                        name="bio-input"
+                        id="bio-input"
+                        placeholder="Tell us a bit about yourself..."
+                    >
+                    </textarea>
+                </label>
+                <label>Avatar<input name="avatar_url" id="avatar-input" type="file" /> </label>
+                <img id="preview" class="preview" alt="avatar preview" src="../assets/avatar.png" />
+                <button id="update-profile-button">Update</button>
+            </form>
+            <p id="error-display"></p>
+        </main>
     </body>
 </html>
