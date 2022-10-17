@@ -63,6 +63,7 @@ export async function getQuestions() {
     return await client.from('questions').select().order('created_at');
 }
 
-// export async function getQuestion(id) {
-// return await client;
-// }
+//TODO: add fetch comments/answers and order
+export async function getQuestion(id) {
+    return await client.from('questions').select('*').eq('id', id).single();
+}
