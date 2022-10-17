@@ -8,6 +8,8 @@ form:not(.inline) {
 
     display: grid;
     gap: 20px;
+
+    border-radius: 8px;
 }
 
 label {
@@ -27,6 +29,7 @@ form button {
     width: 100%;
     font-size: 1.15em;
     padding: 5px;
+    border-radius: 8px;
 }
 
 form input,
@@ -53,10 +56,11 @@ form textarea {
 form button {
     margin-top: 10px;
     height: 45px;
-    background: var(--action-color);
+    background: linear-gradient(to right, #631234, #b82a42);
     border: 0;
     font-weight: bold;
     color: white;
+    border-radius: 8px;
 }
 
 form button:disabled {
