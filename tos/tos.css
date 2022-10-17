@@ -1,5 +1,6 @@
 .titles {
     display: grid;
+    border-radius: 3px;
     justify-content: center;
     margin-right: auto;
     border: 3px solid;
