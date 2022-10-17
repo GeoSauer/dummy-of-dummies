@@ -7,10 +7,13 @@ import { renderQuestion } from './render-utils.js';
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
 const questionsList = document.getElementById('questions-list');
+const searchForm = document.getElementById('search-form');
+const notificationDisplay = document.getElementById('notification-display');
 
 /* State */
 let error = null;
 let questions = [];
+let count = 0;
 
 /* Events */
 window.addEventListener('load', async () => {
@@ -23,6 +26,23 @@ window.addEventListener('load', async () => {
     } else {
         displayQuestions();
     }
+});
+
+async function findPost(name) {
+    const response = await getQuestions(name);
+    error = response.error;
+    questions = response.data;
+    count = response.count;
+
+    displayNotifications();
+    if (error) {
+        displayQuestions();
+    }
+}
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(searchForm);
+    findPost(formData.get('name'), formData.get('tags'));
 });
 
 /* Display Functions */
@@ -42,5 +62,15 @@ function displayQuestions() {
     for (const question of questions) {
         const questionEl = renderQuestion(question);
         questionsList.append(questionEl);
+    }
+}
+
+function displayNotifications() {
+    if (error) {
+        notificationDisplay.classList.add('error');
+        notificationDisplay.textContent = error.message;
+    } else {
+        notificationDisplay.classList.remove('error');
+        notificationDisplay.textContent = `Showing ${questions.length} of ${count}`;
     }
 }

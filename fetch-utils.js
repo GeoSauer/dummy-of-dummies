@@ -60,7 +60,7 @@ export async function createQuestion(question) {
 }
 
 export async function getQuestions() {
-    return await client.from('questions').select().order('created_at');
+    return await client.from('questions').select('*', { count: 'exact' }).order('created_at');
 }
 
 // export async function getQuestion(id) {
