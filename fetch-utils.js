@@ -58,3 +58,11 @@ export async function uploadImage(bucketName, imagePath, imageFile) {
 export async function createQuestion(question) {
     return await client.from('questions').insert(question).single();
 }
+
+export async function getQuestions() {
+    return await client.from('questions').select().order('created_at');
+}
+
+// export async function getQuestion(id) {
+// return await client;
+// }
