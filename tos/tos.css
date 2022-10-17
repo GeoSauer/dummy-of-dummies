@@ -1,32 +1,10 @@
-main {
-    background-color: #262322;
-    color: #f7f7ff;
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-columns: 0.7fr 1.6fr 0.7fr;
-    grid-template-rows: 0.4fr 2.1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-        '. tosTitle .'
-        '. tosText .'
-        '. . .';
-}
-
-.tosText {
-    grid-area: tosText;
-}
-
-.tosTitle {
-    grid-area: tosTitle;
-}
-
 .titles {
     display: grid;
-    padding-left: 10%;
-    margin: auto;
+    justify-content: center;
+    margin-right: auto;
     border: 3px solid;
     width: 100%;
-    background: #aa1155;
+    background: #6a8e7f;
 }
 
 .text-box {
@@ -34,26 +12,22 @@ main {
     margin: auto;
     max-width: 500px;
     border: 3px solid;
-    background: #aa1155;
-    padding: 2px;
-    gap: 5px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    background: #6a8e7f;
+    border-radius: 10px;
 }
 
 .form-control {
-    display: grid;
-    margin: auto;
+    padding-left: 10%;
     width: 100%;
 }
 
 .tos-button {
-    height: 6%;
-    width: 35%;
-    margin: auto;
+    height: 5%;
+    width: 30%;
+    display: grid;
+    align-items: center;
     border-radius: 6px;
-    background: rgb(73, 27, 148);
+    background: #631234;
     color: #f7f7ff;
     font-weight: bold;
 }

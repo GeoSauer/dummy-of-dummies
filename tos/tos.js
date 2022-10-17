@@ -12,7 +12,7 @@ let error = null;
 
 //Event listerner
 tosButton.addEventListener('click', () => {
-    location.assign('../profile-editor/index.html');
+    location.assign('../');
 
     if (error) {
         displayError();
