@@ -77,12 +77,10 @@ commentForm.addEventListener('submit', async (e) => {
 
     const response = await createComment(newComment);
     error = response.error;
-    const comment = response.data;
 
     if (error) {
         displayError();
     } else {
-        question.comments.unshift(comment);
         commentForm.reset();
         commentButton.disabled = false;
         displayComments();
