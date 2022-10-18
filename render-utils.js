@@ -32,3 +32,31 @@ export function renderQuestion(question) {
 
     return a;
 }
+
+export function renderComment(comment) {
+    const li = document.createElement('li');
+
+    const pUser = document.createElement('p');
+    pUser.textContent = comment.profiles.user_name;
+
+    const pCreatedDate = document.createElement('p');
+    pCreatedDate.textContent = new Date(comment.created_at).toLocaleString('en-US', {
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+    });
+
+    const divHead = document.createElement('div');
+    divHead.append(pUser, pCreatedDate);
+
+    const commentDiv = document.createElement('div');
+    const pComment = document.createElement('p');
+    pComment.textContent = comment.comment;
+    commentDiv.append(pComment);
+
+    li.append(divHead, commentDiv);
+
+    return li;
+}
