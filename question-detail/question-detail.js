@@ -1,7 +1,7 @@
 //Imports
 import '../auth/user.js';
 
-import { getQuestion, createComment } from '../fetch-utils.js';
+import { getQuestion, createComment, getComment } from '../fetch-utils.js';
 import { renderComment } from '../render-utils.js';
 // createComment createAnswer uploadImage getComment getAnswer onComment onAnswer
 //renderComment renderAnswer
@@ -51,7 +51,7 @@ window.addEventListener('load', async () => {
         // displayAnswers();
     }
 
-    // onComment(post.id, async (payload) => {
+    // onComment(question.id, async (payload) => {
     //     const commentId = payload.new.id;
     //     const commentResponse = await getComment(commentId);
     //     error = commentResponse.error;
@@ -59,8 +59,8 @@ window.addEventListener('load', async () => {
     //         alert(error.message);
     //     } else {
     //         const comment = commentResponse.data;
-    //         post.comments.unshift(comment);
-    //         console.log(post.comments);
+    //         question.comments.unshift(comment);
+    //         console.log(question.comments);
     //         displayComments();
     //     }
     // });
@@ -85,8 +85,8 @@ commentForm.addEventListener('submit', async (e) => {
         displayError();
     } else {
         question.comments.unshift(comment);
-        displayComments();
         commentForm.reset();
+        displayComments();
     }
 });
 

@@ -12,3 +12,37 @@
     grid-template-columns: 1fr 40px;
     justify-self: center;
 }
+
+/* comment styling */
+
+.user-name {
+    font-weight: bold;
+}
+
+.user-avatar {
+    height: 65px;
+    border-radius: 50%;
+}
+
+.timestamp {
+    font-size: 0.8em;
+}
+
+.user-info {
+    grid-area: profile;
+}
+
+.comment-content {
+    display: grid;
+    background: lightcoral;
+    justify-content: center;
+    grid-area: comment;
+}
+
+.comment {
+    display: grid;
+    background: teal;
+    grid-template-areas: 'profile comment comment comment comment comment';
+}
+
+/* answer styling */

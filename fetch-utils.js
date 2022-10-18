@@ -89,3 +89,15 @@ export async function getQuestion(id) {
 export async function createComment(comment) {
     return await client.from('comments').insert(comment).single();
 }
+
+export async function getComment(id) {
+    return await client
+        .from('comments')
+        .select(`*, profiles(id, user_name, avatar_url)`)
+        .eq('id', id)
+        .single();
+}
+
+// export async function createAnswer(answer) {
+//     return await client.from('answers').insert(answer).single();
+// }

@@ -41,11 +41,18 @@ export function renderCategoryOption(category) {
 
 export function renderComment(comment) {
     const li = document.createElement('li');
+    li.classList.add('comment');
 
     const pUser = document.createElement('p');
+    pUser.classList.add('user-name');
     pUser.textContent = comment.profiles.user_name;
 
+    const img = document.createElement('img');
+    img.classList.add('user-avatar');
+    img.src = comment.profiles.avatar_url;
+
     const pCreatedDate = document.createElement('p');
+    pCreatedDate.classList.add('timestamp');
     pCreatedDate.textContent = new Date(comment.created_at).toLocaleString('en-US', {
         day: 'numeric',
         month: 'numeric',
@@ -55,9 +62,11 @@ export function renderComment(comment) {
     });
 
     const divHead = document.createElement('div');
-    divHead.append(pUser, pCreatedDate);
+    divHead.classList.add('user-info');
+    divHead.append(pCreatedDate, pUser, img);
 
     const commentDiv = document.createElement('div');
+    commentDiv.classList.add('comment-content');
     const pComment = document.createElement('p');
     pComment.textContent = comment.comment;
     commentDiv.append(pComment);
