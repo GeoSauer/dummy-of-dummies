@@ -28,6 +28,11 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+
+export async function getCategories() {
+    return await client.from('categories').select('name');
+}
+
 export async function updateProfile(profile) {
     return await client.from('profiles').upsert(profile).single();
 }

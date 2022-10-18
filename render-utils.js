@@ -32,3 +32,9 @@ export function renderQuestion(question) {
 
     return a;
 }
+
+export function renderCategoryOption(category) {
+    const option = document.createElement('option');
+    option.textContent = category.name;
+    option.value = category.name;
+}
