@@ -77,7 +77,6 @@ export async function getQuestions(name) {
     return response;
 }
 
-//TODO: add fetch comments/answers and order
 export async function getQuestion(id) {
     return await client
         .from('questions')
@@ -96,6 +95,10 @@ export async function getComment(id) {
         .select(`*, profiles(id, user_name, avatar_url)`)
         .eq('id', id)
         .single();
+}
+
+export function onComment(questionID, handleComment) {
+    client.from(`comments:question_id=eq.${questionID}`).on('INSERT', handleComment).subscribe();
 }
 
 // export async function createAnswer(answer) {

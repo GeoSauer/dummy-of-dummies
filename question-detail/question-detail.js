@@ -1,7 +1,7 @@
 //Imports
 import '../auth/user.js';
 
-import { getQuestion, createComment, getComment } from '../fetch-utils.js';
+import { getQuestion, createComment, onComment, getComment } from '../fetch-utils.js';
 import { renderComment } from '../render-utils.js';
 // createComment createAnswer uploadImage getComment getAnswer onComment onAnswer
 //renderComment renderAnswer
@@ -14,14 +14,14 @@ const questionCodeSnippet = document.getElementById('question-code-snippet');
 const questionScreenshot = document.getElementById('question-screenshot');
 
 const errorDisplay = document.getElementById('error-display');
-const answerForm = document.getElementById('answer-form');
-const answerImageInput = document.getElementById('answer-image-input');
-const answerButton = document.getElementById('answer-button');
-const answerList = document.getElementById('answer-list');
+// const answerForm = document.getElementById('answer-form');
+// const answerImageInput = document.getElementById('answer-image-input');
+// const answerButton = document.getElementById('answer-button');
+// const answerList = document.getElementById('answer-list');
+// const preview = document.getElementById('preview');
 const commentForm = document.getElementById('comment-form');
 const commentButton = document.getElementById('comment-button');
 const commentList = document.getElementById('comment-list');
-const preview = document.getElementById('preview');
 
 //State
 let error = null;
@@ -51,19 +51,18 @@ window.addEventListener('load', async () => {
         // displayAnswers();
     }
 
-    // onComment(question.id, async (payload) => {
-    //     const commentId = payload.new.id;
-    //     const commentResponse = await getComment(commentId);
-    //     error = commentResponse.error;
-    //     if (error) {
-    //         alert(error.message);
-    //     } else {
-    //         const comment = commentResponse.data;
-    //         question.comments.unshift(comment);
-    //         console.log(question.comments);
-    //         displayComments();
-    //     }
-    // });
+    onComment(question.id, async (payload) => {
+        const commentId = payload.new.id;
+        const commentResponse = await getComment(commentId);
+        error = commentResponse.error;
+        if (error) {
+            alert(error.message);
+        } else {
+            const comment = commentResponse.data;
+            question.comments.unshift(comment);
+            displayComments();
+        }
+    });
 });
 
 commentForm.addEventListener('submit', async (e) => {
@@ -79,19 +78,21 @@ commentForm.addEventListener('submit', async (e) => {
     const response = await createComment(newComment);
     error = response.error;
     const comment = response.data;
-    commentButton.disabled = false;
 
     if (error) {
         displayError();
     } else {
         question.comments.unshift(comment);
         commentForm.reset();
+        commentButton.disabled = false;
         displayComments();
     }
 });
 
 // answerForm.addEventListener('submit', async (e) => {
 //     e.preventDefault();
+//     answerButton.disabled = true;
+
 //     const formData = new FormData(answerForm);
 //     const newAnswer = {
 //         answer: formData.get('answer'),
@@ -103,7 +104,9 @@ commentForm.addEventListener('submit', async (e) => {
 //     if (error) {
 //         displayError();
 //     } else {
+//         question.answers.unshift(answer);
 //         answerForm.reset();
+//         answerButton.disabled = false;
 //         displayAnswers();
 //     }
 // });
@@ -125,6 +128,13 @@ function displayComments() {
         commentList.append(commentEl);
     }
 }
+
+// function displayAnswers() {
+//     answerList.innerHTML = '';
+//     for (const answer of question.answers);
+//     const answerEl = renderAnswer(answer);
+//     answerList.append(answerEl);
+// }
 
 function displayError() {
     errorDisplay.textContent = error.message;
