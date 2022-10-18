@@ -43,8 +43,6 @@ export function renderComment(comment) {
     const li = document.createElement('li');
     li.classList.add('comment');
 
-    console.log(comment);
-
     const pUser = document.createElement('p');
     pUser.classList.add('user-name');
     pUser.textContent = comment.profiles.user_name;
