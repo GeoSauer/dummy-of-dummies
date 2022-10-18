@@ -35,8 +35,8 @@
 
     <body>
         <header class="page-header">
-            <!-- <img class="logo" src="/assets/html_css_js.png" alt="logo" />
-            <p class="title">Supabase Web App</p> -->
+            <img class="logo" src="/assets/logo.png" alt="logo" />
+            <p class="title"></p>
             <nav>
                 <a href="/">Home</a>
                 <a id="sign-out-link" href="../auth">Sign Out</a>
@@ -46,7 +46,14 @@
 
         <main>
             <form id="profile-form">
-                <label
+                <label>
+                    <label>Avatar<input name="avatar_url" id="avatar-input" type="file" /> </label>
+                    <img
+                        id="preview"
+                        class="preview"
+                        alt="avatar preview"
+                        src="../assets/avatar.png"
+                    />
                     >Username<input
                         name="username-input"
                         id="username-input"
@@ -54,6 +61,7 @@
                         required
                     />
                 </label>
+                <label> Location<input name="location-input" id="location-input" /></label>
                 <label
                     >Bio<textarea
                         name="bio-input"
@@ -62,8 +70,6 @@
                     >
                     </textarea>
                 </label>
-                <label>Avatar<input name="avatar_url" id="avatar-input" type="file" /> </label>
-                <img id="preview" class="preview" alt="avatar preview" src="../assets/avatar.png" />
                 <button id="update-profile-button">Update</button>
             </form>
             <p id="error-display"></p>

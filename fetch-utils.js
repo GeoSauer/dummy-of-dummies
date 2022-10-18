@@ -28,6 +28,11 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+
+export async function getCategories() {
+    return await client.from('categories').select('name');
+}
+
 export async function updateProfile(profile) {
     return await client.from('profiles').upsert(profile).single();
 }
@@ -59,10 +64,44 @@ export async function createQuestion(question) {
     return await client.from('questions').insert(question).single();
 }
 
-export async function getQuestions() {
-    return await client.from('questions').select().order('created_at');
+export async function getQuestions(name) {
+    let query = client
+        .from('questions')
+        .select('*', { count: 'exact' })
+        .order('created_at')
+        .limit(50);
+    if (name) {
+        query = query.ilike('title', `%${name}`);
+    }
+    const response = await query;
+    return response;
 }
 
-// export async function getQuestion(id) {
-// return await client;
+export async function getQuestion(id) {
+    return await client
+        .from('questions')
+        .select(`*,comments(*, profiles(*))`)
+        .eq('id', id)
+        .order('created_at', { foreignTable: 'comments', ascending: false })
+        .single();
+}
+
+export async function createComment(comment) {
+    return await client.from('comments').insert(comment).single();
+}
+
+export async function getComment(id) {
+    return await client
+        .from('comments')
+        .select(`*, profiles(id, user_name, avatar_url)`)
+        .eq('id', id)
+        .single();
+}
+
+export function onComment(questionID, handleComment) {
+    client.from(`comments:question_id=eq.${questionID}`).on('INSERT', handleComment).subscribe();
+}
+
+// export async function createAnswer(answer) {
+//     return await client.from('answers').insert(answer).single();
 // }
