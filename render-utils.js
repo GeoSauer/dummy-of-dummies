@@ -1,7 +1,7 @@
 export function renderQuestion(question, userId) {
     const a = document.createElement('a');
     a.classList.add('question-link');
-    // a.href = `/question-detail/?id=${question.id}`;
+    a.href = `/question-detail/?id=${question.id}`;
 
     const favoriteCount = document.createElement('span');
     favoriteCount.textContent = question.favorites.length;
