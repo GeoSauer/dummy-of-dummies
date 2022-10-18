@@ -34,20 +34,20 @@ body {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.page-header .logo {
-    height: 100%;
-}
+/* .page-header .logo { */
+/* height: 100%; */
+/* } */
 
-.page-header .title {
-    font-size: 1.3em;
-    font-weight: 800;
-    flex-grow: 2;
-}
+/* .page-header .title { */
+/* font-size: 1.3em; */
+/* font-weight: 800; */
+/* flex-grow: 2; */
+/* } */
 
-.page-header nav {
-    display: flex;
-    gap: 10px;
-}
+/* .page-header nav { */
+/* display: flex; */
+/* gap: 10px; */
+/* } */
 
 main {
     padding: 20px;

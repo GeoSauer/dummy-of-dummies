@@ -28,9 +28,10 @@
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/nav.css" />
         <!-- add link for page specific css -->
         <!--Fontawsome CDN Link-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" />
     </head>
 
     <body>
@@ -40,13 +41,28 @@
 
             <div class="nav">
                 <div class="nav-item">
-                    <div class="nav-item nav-itemC"></div>
-                    <i class="profile-editor"></i>
-                    <span class="nav-item-title">Edit Profile</span>
-                </div>
-                <div class="nav-item nav-itemC"></div>
-                    <i class="/question-editor/index.html"></i>
-                    <span class="nav-item-title">Question Editor</span>
+                    <div class="nav-item nav-itemC">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="nav-item-title">Home</span>
+                    </div>
+                    <div class="nav-item nav-itemC">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="nav-item-title">Edit Profile</span>
+                    </div>
+                    <div class="nav-item nav-itemC">
+                        <i class="fa-solid fa-question"></i>
+                        <span class="nav-item-title">Question Editor</span>
+                    </div>
+                    <div class="nav-item nav-itemC">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span class="nav-item-title">About</span>
+                    </div>
+                    <div class="nav-item nav-itemC">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item-title">Sign Out</span>
+                    </div>
+                    <div class="nav-item nav-toggle"></div>
+                    <i class="fas fa-angle-double-left"></i>
                 </div>
             </div>
             <nav>
@@ -74,9 +90,9 @@
             <section id="questions-section">
                 <ul id="questions-list"></ul>
             </section>
-                 <!--Jquery CDN Link-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="app.js"></script>
+            <!--Jquery CDN Link-->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="app.js"></script>
         </main>
     </body>
 </html>
