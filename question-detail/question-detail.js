@@ -3,8 +3,6 @@ import '../auth/user.js';
 
 import { getQuestion, createComment, onComment, getComment } from '../fetch-utils.js';
 import { renderComment } from '../render-utils.js';
-// createComment createAnswer uploadImage getComment getAnswer onComment onAnswer
-//renderComment renderAnswer
 
 //DOM Elements
 const questionTitle = document.getElementById('question-title');
@@ -66,6 +64,7 @@ window.addEventListener('load', async () => {
 });
 
 // make comment for change to push up
+// and anotha one
 
 commentForm.addEventListener('submit', async (e) => {
     e.preventDefault();
