@@ -82,6 +82,7 @@ export async function getQuestion(id) {
         .from('questions')
         .select(`*,comments(*, profiles(*))`)
         .eq('id', id)
+        .order('created_at', { foreignTable: 'comments', ascending: false })
         .single();
 }
 
