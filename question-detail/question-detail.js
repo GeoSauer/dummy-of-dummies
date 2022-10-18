@@ -1,8 +1,8 @@
 //Imports
 import '../auth/user.js';
 
-import { getQuestion } from '../fetch-utils.js';
-
+import { getQuestion, createComment } from '../fetch-utils.js';
+import { renderComment } from '../render-utils.js';
 // createComment createAnswer uploadImage getComment getAnswer onComment onAnswer
 //renderComment renderAnswer
 
@@ -47,7 +47,7 @@ window.addEventListener('load', async () => {
         location.assign('/');
     } else {
         displayQuestion();
-        // displayComments();
+        displayComments();
         // displayAnswers();
     }
 
@@ -66,23 +66,29 @@ window.addEventListener('load', async () => {
     // });
 });
 
-// commentForm.addEventListener('submit', async (e) => {
-//     e.preventDefault();
-//     const formData = new FormData(commentForm);
-//     const newComment = {
-//         comment: formData.get('comment'),
-//         question_id: question.id,
-//     };
+commentForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    commentButton.disabled = true;
 
-//     const response = await createComment(newComment);
-//     error = response.error;
-//     if (error) {
-//         displayError();
-//     } else {
-//         commentForm.reset();
-//         displayComments();
-//     }
-// });
+    const formData = new FormData(commentForm);
+    const newComment = {
+        question_id: question.id,
+        comment: formData.get('comment-input'),
+    };
+
+    const response = await createComment(newComment);
+    error = response.error;
+    const comment = response.data;
+    commentButton.disabled = false;
+
+    if (error) {
+        displayError();
+    } else {
+        question.comments.unshift(comment);
+        displayComments();
+        commentForm.reset();
+    }
+});
 
 // answerForm.addEventListener('submit', async (e) => {
 //     e.preventDefault();
@@ -109,15 +115,16 @@ function displayQuestion() {
     questionContent.textContent = question.content;
     questionCodeSnippet.textContent = question.code_text;
     questionScreenshot.src = question.screenshot_url;
+    questionScreenshot.alt = `${question.title} image`;
 }
 
-// function displayComments() {
-//     commentList.innerHTML = '';
-//     for (const comment of question.comments) {
-//         const commentEl = renderComment(comment);
-//         commentList.append(commentEl);
-//     }
-// }
+function displayComments() {
+    commentList.innerHTML = '';
+    for (const comment of question.comments) {
+        const commentEl = renderComment(comment);
+        commentList.append(commentEl);
+    }
+}
 
 function displayError() {
     errorDisplay.textContent = error.message;
