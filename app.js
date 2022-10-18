@@ -17,6 +17,8 @@ let count = 0;
 
 /* Events */
 window.addEventListener('load', async () => {
+    findPost();
+
     const response = await getQuestions();
     error = response.error;
     questions = response.data;
@@ -36,13 +38,16 @@ async function findPost(name) {
 
     displayNotifications();
     if (error) {
+        displayError();
+    } else {
         displayQuestions();
     }
 }
+
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(searchForm);
-    findPost(formData.get('name'), formData.get('tags'));
+    findPost(formData.get('name'));
 });
 
 /* Display Functions */

@@ -59,8 +59,17 @@ export async function createQuestion(question) {
     return await client.from('questions').insert(question).single();
 }
 
-export async function getQuestions() {
-    return await client.from('questions').select('*', { count: 'exact' }).order('created_at');
+export async function getQuestions(name) {
+    let query = client
+        .from('questions')
+        .select('*', { count: 'exact' })
+        .order('created_at')
+        .limit(50);
+    if (name) {
+        query = query.ilike('title', `%${name}`);
+    }
+    const response = await query;
+    return response;
 }
 
 //TODO: add fetch comments/answers and order
