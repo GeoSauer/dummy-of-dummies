@@ -32,6 +32,7 @@ window.addEventListener('load', async () => {
 
 async function findPost(name) {
     const response = await getQuestions(name);
+
     error = response.error;
     questions = response.data;
     count = response.count;
