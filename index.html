@@ -16,6 +16,7 @@
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
         <script type="module" src="app.js"></script>
+        <script type="module" src="nav.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,12 +58,17 @@
                         <i class="fa-solid fa-circle-info"></i>
                         <span class="nav-item-title">About</span>
                     </div>
-                    <div class="nav-item nav-itemC">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item-title">Sign Out</span>
+                    <a href="/auth/">
+                        <div class="nav-item nav-itemC">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="nav-item-title">Sign Out</span>
+                        </div>
+                    </a>
+
+                    <div class="nav-item"></div>
+                    <div class="nav-item nav-toggle">
+                        <i class="fas fa-angle-double-left"></i>
                     </div>
-                    <div class="nav-item nav-toggle"></div>
-                    <i class="fas fa-angle-double-left"></i>
                 </div>
             </div>
             <nav>
