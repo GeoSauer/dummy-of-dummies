@@ -1,4 +1,7 @@
 export function renderQuestion(question, userId) {
+    const questionContainer = document.createElement('div');
+    questionContainer.classList.add('question-item');
+
     const a = document.createElement('a');
     a.classList.add('question-link');
     a.href = `/question-detail/?id=${question.id}`;
@@ -20,7 +23,7 @@ export function renderQuestion(question, userId) {
     }
 
     const li = document.createElement('li');
-    li.classList.add('question-item');
+    li.classList.add('question-container');
 
     const div = document.createElement('div');
     div.classList.add('question-text-contents');
@@ -44,10 +47,11 @@ export function renderQuestion(question, userId) {
     img.src = question.screenshot_url;
 
     div.append(pTitle, pCategory, pContent);
-    li.append(div, img, favoriteCount, button);
-    a.append(li);
+    li.append(div, img);
+    a.append(li, favoriteCount);
+    questionContainer.append(a, button);
 
-    return a;
+    return questionContainer;
 }
 
 export function renderComment(comment) {
