@@ -15,7 +15,7 @@ let error = null;
 
 tosButton.addEventListener('click', () => {
     if (tosCheckbox.checked) {
-        location.assign('/');
+        location.assign('/profile-editor/');
     } else {
         alert('You must agree to ToS to continue');
     }
