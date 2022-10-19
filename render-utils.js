@@ -1,7 +1,22 @@
-export function renderQuestion(question) {
+export function renderQuestion(question, userId) {
     const a = document.createElement('a');
     a.classList.add('question-link');
     a.href = `/question-detail/?id=${question.id}`;
+
+    const favoriteCount = document.createElement('span');
+    favoriteCount.textContent = question.favorites.length;
+
+    const button = document.createElement('button');
+    button.classList.add('favorite-button');
+
+    button.textContent = '+';
+    for (const favorite of question.favorites) {
+        if (favorite.user_id === userId) {
+            button.textContent = '( :';
+            button.classList.add('favorited');
+            break;
+        }
+    }
 
     const li = document.createElement('li');
     li.classList.add('question-item');
@@ -27,16 +42,10 @@ export function renderQuestion(question) {
     img.src = question.screenshot_url;
 
     div.append(pTitle, pCategory, pContent);
-    li.append(div, img);
+    li.append(div, img, favoriteCount, button);
     a.append(li);
 
     return a;
-}
-
-export function renderCategoryOption(category) {
-    const option = document.createElement('option');
-    option.textContent = category.name;
-    option.value = category.name;
 }
 
 export function renderComment(comment) {

@@ -60,8 +60,17 @@
                     </label>
                     <label>
                         <p class="label-text">Category</p>
-                        <select name="category-select" id="category-select">
+                        <select name="category-select" id="category-select" required>
                             <option value="">Select a Category</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="SQL">SQL</option>
+                            <option value="Supabase">Supabase</option>
+                            <option value="Git">Git</option>
+                            <option value="Terminal">Terminal</option>
+                            <option value="General">General</option>
+                            <option value="Conceptual">Conceptual</option>
                         </select>
                     </label>
                     <label>
@@ -72,6 +81,7 @@
                             cols="30"
                             rows="10"
                             placeholder="question goes here..."
+                            required
                         ></textarea>
                     </label>
                     <label>
