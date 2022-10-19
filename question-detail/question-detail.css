@@ -64,6 +64,7 @@ h1 {
     padding-left: 20px;
     font-weight: bold;
     color: black;
+    text-align: center;
 }
 
 #question-category {
@@ -83,6 +84,7 @@ h1 {
 #question-content {
     color: black;
     height: fit-content;
+    padding-top: 20px;
 }
 
 #question-code-snippet {
@@ -98,8 +100,11 @@ h1 {
 
 #question-screenshot {
     display: grid;
-    background: lightseagreen;
-    height: 200px;
     border-radius: 5px;
+    height: 200px;
     padding: 10px;
+}
+
+#question-screenshot img {
+    border-radius: 5px;
 }
