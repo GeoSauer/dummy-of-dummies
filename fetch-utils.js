@@ -30,7 +30,7 @@ export async function signOutUser() {
 /* Data functions */
 
 export async function getCategories() {
-    return await client.from('categories').select('name');
+    return await client.from('questions').select('category');
 }
 
 export async function updateProfile(profile) {
