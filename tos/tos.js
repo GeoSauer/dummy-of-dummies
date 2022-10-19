@@ -6,13 +6,19 @@ import '../auth/user.js';
 // Dom elements
 const errorDisplay = document.getElementById('error-display');
 const tosButton = document.getElementById('tos-button');
+const tosCheckbox = document.getElementById('agree-tos-check');
 
 // State
 let error = null;
 
-//Event listerner
+//Event listener
+
 tosButton.addEventListener('click', () => {
-    location.assign('../');
+    if (tosCheckbox.checked) {
+        location.assign('/profile-editor/');
+    } else {
+        alert('You must agree to ToS to continue');
+    }
 
     if (error) {
         displayError();

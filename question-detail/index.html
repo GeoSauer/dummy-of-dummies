@@ -42,6 +42,7 @@
                 <a href="/">Home</a>
                 <a id="sign-out-link" href="../auth">Sign Out</a>
                 <a id="profile-editor" href="../profile-editor">Edit Profile</a>
+                <a id="profile-editor" href="/question-editor/index.html">Ask A Question</a>
                 <a id="about" href="../about/">About</a>
             </nav>
         </header>
@@ -51,32 +52,13 @@
                 <h1 id="question-title">Look at this post</h1>
                 <p id="question-category">JavaScript</p>
                 <p id="question-content">Mm mm so dang delicious</p>
-                <p id="question-code-snippet">code code cody code</p>
-                <img id="question-screenshot" src="../assets/download.png" alt="placeholder" />
+                <pre id="question-code-snippet">code code cody code</pre>
+                <div>
+                    <img id="question-screenshot" src="../assets/download.png" alt="placeholder" />
+                    *click on screenshot to enlarge*
+                </div>
             </section>
-            <ul id="comment-list">
-                <li>
-                    <div class="user-info">
-                        <h2>username</h2>
-                        <p>avatar</p>
-                        <p>timestamp</p>
-                    </div>
-                    <div class="comment">
-                        <p>comment</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="user-info">
-                        <h2>username</h2>
-                        <p>avatar</p>
-                        <p>timestamp</p>
-                    </div>
-                    <div class="comment">
-                        <p>comment</p>
-                    </div>
-                </li>
-            </ul>
-            <ul id="answer-list">
+            <!-- <ul id="answer-list">
                 <li>
                     <div class="user-info">
                         <h2>username</h2>
@@ -113,7 +95,7 @@
                         <img src="../assets/avatar.png">
                     </div>
                 </li>
-            </ul>
+            </ul> -->
 
             <section id="form-section">
                 <form id="comment-form">
@@ -124,11 +106,12 @@
                             name="comment-input"
                             type="text"
                             placeholder="Enter your comment here..."
+                            required
                         />
                     </label>
                     <button id="comment-button">Submit your comment!</button>
 
-            <section id="form-section">
+                    <!-- <section id="form-section">
                 <form id="answer-form">
                     <h3>Or this form to answer the question:</h3>
                     <label>
@@ -161,10 +144,11 @@
                             />
                         </div>
                     </label>
-                    <button id="answer-button">Submit your answer!</button>
+                    <button id="answer-button">Submit your answer!</button> -->
                     <p id="error-display"></p>
                 </form>
             </section>
+            <ul id="comment-list"></ul>
         </main>
     </body>
 </html>
