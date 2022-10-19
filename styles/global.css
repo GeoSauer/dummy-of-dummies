@@ -72,6 +72,12 @@ main {
     display: none;
 }
 
+.search {
+    transform: translateX(-270px);
+    scale: 140%;
+    margin: auto;
+}
+
 /*              home page questions display              */
 
 #questions-list {
