@@ -94,12 +94,20 @@ main {
     width: fit-content;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 200px 50px;
-    grid-template-rows: 92px;
+    /* grid-template-columns: 200px 50px;
+    grid-template-rows: 92px; */
     background: var(--offset-color);
     color: var(--text-color);
     border: 1px solid var(--text-color);
     border-radius: 5px;
+    align-items: center;
+    text-justify: left;
+}
+
+.question-container {
+    display: grid;
+    grid-template-columns: 200px 50px;
+    grid-template-rows: 92px;
     align-items: center;
     text-justify: left;
 }
