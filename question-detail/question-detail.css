@@ -66,7 +66,7 @@ h1 {
 /* question styling */
 
 #question-title {
-    font-size: 2em;
+    font-size: 1.8em;
     padding-left: 20px;
     font-weight: bold;
     color: black;
@@ -102,20 +102,34 @@ h1 {
     gap: 10px;
 }
 
-.scrollbar-cover {
-    overflow: ;
-    border-radius: 5px;
+#question-code-snippet::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
 }
 
-#code-div {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    gap: 10px;
+#question-code-snippet::-webkit-scrollbar-track {
+    display: none;
 }
 
-.scrollbar-cover {
-    overflow: ;
+#question-code-snippet::-webkit-scrollbar-thumb {
     border-radius: 5px;
+    background: rgba(245, 245, 245, 0.295);
+}
+
+#question-code-snippet::-webkit-scrollbar-thumb:hover {
+    border: 1px solid rgb(46, 46, 46);
+    background: white;
+}
+
+#question-code-snippet::-webkit-scrollbar-button {
+    height: 10px;
+    width: 10px;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+#question-code-snippet::-webkit-scrollbar-corner {
+    display: none;
 }
 
 #question-code-snippet {
