@@ -9,6 +9,9 @@
     height: 35px;
 }
 
+h1 {
+    margin: 0;
+}
 /* comment styling */
 
 .user-name {
@@ -64,19 +67,22 @@
 }
 
 #question-category {
+    color: black;
 }
 
 .question-summary {
     display: grid;
-    grid-template-rows: 2em 1em 1fr 1fr 1fr;
+    grid-template-rows: 2em 1em minmax(25px, 100px) 1fr 200px;
     padding: 20px;
     width: fit-content;
     background: #c1c1c1;
     border-radius: 30px;
+    gap: 20px;
 }
 
 #question-content {
     color: black;
+    height: fit-content;
 }
 
 #question-code-snippet {
