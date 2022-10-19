@@ -48,12 +48,6 @@ export function renderQuestion(question, userId) {
     return a;
 }
 
-export function renderCategoryOption(category) {
-    const option = document.createElement('option');
-    option.textContent = category.name;
-    option.value = category.name;
-}
-
 export function renderComment(comment) {
     const li = document.createElement('li');
     li.classList.add('comment');
