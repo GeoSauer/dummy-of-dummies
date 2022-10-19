@@ -54,8 +54,14 @@
                 <p id="question-content">Mm mm so dang delicious</p>
                 <pre id="question-code-snippet">code code cody code</pre>
                 <div>
-                    <img id="question-screenshot" src="../assets/download.png" alt="placeholder" />
-                    *click on screenshot to enlarge*
+                    <a href="../screenshot/" target="_blank">
+                        <img
+                            id="question-screenshot"
+                            src="../assets/download.png"
+                            alt="placeholder"
+                        />
+                        *click on screenshot to enlarge*
+                    </a>
                 </div>
             </section>
             <!-- <ul id="answer-list">
@@ -97,21 +103,20 @@
                 </li>
             </ul> -->
 
-            <section id="form-section">
-                <form id="comment-form">
-                    <h3>Use this form to add a comment to the discussion:</h3>
-                    <label>
-                        <p class="label-text">Comment</p>
-                        <input
-                            name="comment-input"
-                            type="text"
-                            placeholder="Enter your comment here..."
-                            required
-                        />
-                    </label>
-                    <button id="comment-button">Submit your comment!</button>
+            <!-- <section id="form-section"> -->
+            <form id="comment-form">
+                <label>
+                    <p class="label-text"></p>
+                    <input
+                        name="comment-input"
+                        type="text"
+                        placeholder="Enter your comment here..."
+                        required
+                    />
+                </label>
+                <button id="comment-button">Submit</button>
 
-                    <!-- <section id="form-section">
+                <!-- <section id="form-section">
                 <form id="answer-form">
                     <h3>Or this form to answer the question:</h3>
                     <label>
@@ -145,9 +150,9 @@
                         </div>
                     </label>
                     <button id="answer-button">Submit your answer!</button> -->
-                    <p id="error-display"></p>
-                </form>
-            </section>
+                <p id="error-display"></p>
+            </form>
+            <!-- </section> -->
             <ul id="comment-list"></ul>
         </main>
     </body>

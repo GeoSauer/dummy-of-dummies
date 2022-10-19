@@ -1,16 +1,12 @@
-* {
-    font-family: 'Times New Roman', Times, serif;
-}
-
-#code-text-area {
-    font-family: monospace !important;
-}
-
-#screenshot-container {
-    width: 80%;
+#comment-form {
     display: grid;
-    grid-template-columns: 1fr 40px;
-    justify-self: center;
+    grid-template-columns: 1fr 100px;
+    align-items: end;
+    padding: 0px 10px 0px 10px;
+}
+
+#comment-form button {
+    height: 35px;
 }
 
 /* comment styling */
@@ -71,8 +67,8 @@
 }
 
 .question-summary {
-    display: flex;
-    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-rows: 2em 1em 1fr 1fr 1fr;
     padding: 20px;
     width: fit-content;
     background: #c1c1c1;
