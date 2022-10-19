@@ -4,15 +4,16 @@ export function renderQuestion(question, userId) {
     a.href = `/question-detail/?id=${question.id}`;
 
     const favoriteCount = document.createElement('span');
+    favoriteCount.classList.add('favorite-count');
     favoriteCount.textContent = question.favorites.length;
 
     const button = document.createElement('button');
     button.classList.add('favorite-button');
 
-    button.textContent = '+';
+    button.textContent = '🖤';
     for (const favorite of question.favorites) {
         if (favorite.user_id === userId) {
-            button.textContent = '( :';
+            button.textContent = '💖';
             button.classList.add('favorited');
             break;
         }
@@ -26,11 +27,12 @@ export function renderQuestion(question, userId) {
 
     const pTitle = document.createElement('p');
     pTitle.classList.add('question-title');
+    pTitle.classList.add('truncated-title');
     pTitle.textContent = question.title;
 
     const pCategory = document.createElement('p');
     pCategory.classList.add('question-category');
-    pCategory.textContent = question.Category;
+    pCategory.textContent = question.category;
 
     const pContent = document.createElement('p');
     pContent.classList.add('question-content');
