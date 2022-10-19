@@ -71,7 +71,7 @@ export async function getQuestions(name) {
         .order('created_at')
         .limit(50);
     if (name) {
-        query = query.ilike('title', `%${name}`);
+        query = query.ilike('title', `%${name}%`);
     }
     const response = await query;
     return response;
