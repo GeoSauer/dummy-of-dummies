@@ -1,3 +1,7 @@
+// Imports
+
+import '../auth/user.js';
+
 $('.nav-itemC').on('click', function (e) {
     updateNav($(this));
 });

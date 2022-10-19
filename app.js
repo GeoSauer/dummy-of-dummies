@@ -1,5 +1,5 @@
 /* Imports */
-import { getQuestions } from './fetch-utils.js';
+import { getQuestions, signOutUser, updateProfile } from './fetch-utils.js';
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
 import { renderQuestion } from './render-utils.js';
@@ -9,6 +9,8 @@ const errorDisplay = document.getElementById('error-display');
 const questionsList = document.getElementById('questions-list');
 const searchForm = document.getElementById('search-form');
 const notificationDisplay = document.getElementById('notification-display');
+const navSignout = document.getElementById('nav-signout');
+const navPe = document.getElementById('nav-pe');
 
 /* State */
 let error = null;
@@ -51,6 +53,13 @@ searchForm.addEventListener('submit', (e) => {
     findPost(formData.get('name'));
 });
 
+navSignout.addEventListener('click', () => {
+    signOutUser();
+});
+
+navPe.addEventListener('click', () => {
+    updateProfile();
+});
 /* Display Functions */
 function displayError() {
     if (error) {

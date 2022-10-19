@@ -16,6 +16,8 @@
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
         <script type="module" src="about.js"></script>
+        <script type="module" src="../app.js"></script>
+        <script type="module" src="nav.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,13 +31,54 @@
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
         <link rel="stylesheet" href="about.css" />
+        <link rel="stylesheet" href="/styles/nav.css" />
         <!-- add link for page specific css -->
+         <!--Fontawsome CDN Link-->
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" />
     </head>
 
     <body>
         <header class="page-header">
-            <img class="logo" src="/assets/html_css_js.png" alt="logo" />
+            <img class="logo" src="../assets/logo.png" alt="logo" />
             <p class="title">Meet The Devs!</p>
+            <div class="nav">
+                <a href="/">
+                <div class="nav-item">
+                    <div class="nav-item nav-itemC">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="nav-item-title">Home</span>
+                    </div></a>
+                    <a id="nav-pe" href="../profile-editor/">
+                        <div class="nav-item nav-itemC">
+                            <i class="fa-solid fa-user"></i>
+                            <span class="nav-item-title">Edit Profile</span>
+                        </div></a
+                    >
+                    <a href="../question-editor/">
+                        <div class="nav-item nav-itemC">
+                            <i class="fa-solid fa-question"></i>
+                            <span class="nav-item-title">Question Editor</span>
+                        </div></a
+                    >
+                    <a href="../about/">
+                        <div class="nav-item nav-itemC">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="nav-item-title">About</span>
+                        </div></a
+                    >
+                    <a id="nav-signout" href="../auth/">
+                        <div class="nav-item nav-itemC">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="nav-item-title">Sign Out</span>
+                        </div>
+                    </a>
+
+                    <div class="nav-item"></div>
+                    <div class="nav-item nav-toggle">
+                        <i class="fas fa-angle-double-left"></i>
+                    </div>
+                </div>
+            </div>
             <nav>
                 <a href="/">Home</a>
                 <a id="sign-out-link" href="../auth">Sign Out</a>
@@ -47,7 +90,7 @@
             <section id="about-us">
                 <div class="dev">
                     <h2 class="dev-name">Lexus Banton</h2>
-                    <img src="../assets/meister-favicon.jpg" alt="" class="dev-img" />
+                    <img src="../assets/lex-professional.png" alt="" class="dev-img" />
                     <p class="dev-bio">
                         look at all of these fun and fancy facts about these totally really people!
                     </p>
@@ -74,6 +117,9 @@
                     </p>
                 </div>
             </section>
+            <!--Jquery CDN Link-->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+          <script src="app.js"></script>
         </main>
     </body>
 </html>
