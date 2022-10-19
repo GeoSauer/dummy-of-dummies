@@ -1,0 +1,20 @@
+#about-us {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.dev {
+    display: grid;
+    justify-items: center;
+    background: var(--offset-color);
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.dev-img {
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 2px 5px 3px 1px rgba(0, 0, 0, 0.425);
+}

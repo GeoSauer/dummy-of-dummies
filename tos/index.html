@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Terms of service</title>
+        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+
+        <!-- js -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+        <script type="module" src="tos.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <!-- <link rel="stylesheet" href="/styles/global.css" /> -->
+        <link rel="stylesheet" href="tos.css" />
+        <!-- add link for page specific css -->
+    </head>
+
+    <body>
+        <header class="page-header">
+            <img class="logo" src="/assets/logo.png" alt="logo" />
+            <p class="title">By Devs for Devs</p>
+            <p class="title"></p>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="titles">
+                    <h1>Terms Of Service</h1>
+                </div>
+
+                <span class="l">`</span>
+
+                <div class="text-box">
+                    <p>
+                        Hello! Thank you for taking an interest in our page! We strive to curate a
+                        safe and educational atmosphere, free of gatekeeping and any form of
+                        bullying or hate speech. This is a space for coders to ask questions and
+                        collaboratively come up with answers. While all skill levels are welcome,
+                        our focus is to help novices trying to overcome the initial plunge into
+                        coding. If all that sounds good then welcome, we look forward to working
+                        with you.
+                    </p>
+                </div>
+            </div>
+            <form class="checkbox">
+                <input type="checkbox" id="agree-tos-check" name="test" required />
+                I have read and accept these terms
+            </form>
+            <button id="tos-button" class="tos-button">Start Asking Questions!</button>
+            <p id="error-display"></p>
+            <p id="demo"></p>
+        </main>
+    </body>
+</html>

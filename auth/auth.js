@@ -65,7 +65,11 @@ authForm.addEventListener('submit', async (e) => {
         // check the query params for a redirect Url (page before auth redirect)
         const params = new URLSearchParams(location.search);
         const redirectUrl = params.get('redirectUrl') || '/';
-        location.replace(redirectUrl);
+        if (isSignIn) {
+            location.replace(redirectUrl);
+        } else {
+            location.replace('../tos');
+        }
     }
 });
 

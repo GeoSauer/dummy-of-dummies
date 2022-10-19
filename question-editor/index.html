@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Question Page</title>
+        <link rel="icon" type="image/x-icon" href="/assets/download.png" />
+
+        <!-- js -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+        <script type="module" src="./question-editor.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <!-- add link for page specific css -->
+        <link rel="stylesheet" href="/question-editor/question-editor.css" />
+        <link rel="stylesheet" href="/styles/form.css" />
+    </head>
+
+    <body>
+        <header class="page-header">
+            <img class="logo" src="/assets/logo.png" alt="logo" />
+            <p class="title">By Devs for Devs</p>
+            <nav>
+                <a href="/">Home</a>
+                <a id="sign-out-link" href="/auth">Sign Out</a>
+                <a id="profile-editor" href="../profile-editor">Edit Profile</a>
+                <a id="about" href="../about">About</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="form-section">
+                <form id="question-form">
+                    <label>
+                        <p class="label-text">Question</p>
+                        <input
+                            name="question-title"
+                            id="question-title"
+                            type="text"
+                            required
+                            placeholder="What can we help you with?"
+                        />
+                    </label>
+                    <label>
+                        <p class="label-text">Category</p>
+                        <select name="category-select" id="category-select" required>
+                            <option value="">Select a Category</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="SQL">SQL</option>
+                            <option value="Supabase">Supabase</option>
+                            <option value="Git">Git</option>
+                            <option value="Terminal">Terminal</option>
+                            <option value="General">General</option>
+                            <option value="Conceptual">Conceptual</option>
+                        </select>
+                    </label>
+                    <label>
+                        <p class="label-text">Question</p>
+                        <textarea
+                            name="question-text-area"
+                            id="question-text-area"
+                            cols="30"
+                            rows="10"
+                            placeholder="question goes here..."
+                            required
+                        ></textarea>
+                    </label>
+                    <label>
+                        <p class="label-text">Code Snippet</p>
+                        <textarea
+                            name="code-text-area"
+                            id="code-text-area"
+                            cols="30"
+                            rows="10"
+                            placeholder="paste your code example here if you have one..."
+                        ></textarea>
+                    </label>
+                    <label>
+                        <p class="label-text">Query Screenshot</p>
+                        <div id="screenshot-container">
+                            <input id="image-input" name="image-input" type="file" />
+                            <img
+                                id="image-preview"
+                                class="avatar"
+                                src="/assets/download.png"
+                                alt="image-upload-preview"
+                            />
+                        </div>
+                    </label>
+                    <button>Ask your question!</button>
+                    <p id="error-display"></p>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>

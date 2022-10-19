@@ -1,48 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>For (Dummy of Dummies)</title>
+        <link rel="icon" type="image/x-icon" href="/assets/download.png" />
 
-    <!-- title and favicon -->
-    <title>Supabase Web App</title>
-    <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+        <!-- js -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+        <script type="module" src="app.js"></script>
 
-    <!-- js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script type="module" src="app.js"></script>
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
 
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <!-- add link for page specific css -->
+    </head>
 
+    <body>
+        <header class="page-header">
+            <img class="logo" src="/assets/logo.png" alt="logo" />
+            <p class="title">By Devs for Devs</p>
+            <nav>
+                <section class="search">
+                    <form id="search-form">
+                        <input name="name" placeholder="Search..." size="40" />
+                        <!-- <select name="tags" id="tag-select">
+                            <option value="">Tags</option> -->
+                        <!-- </select> -->
+                        <button>Search</button>
+                    </form>
+                </section>
+                <a href="/">Home</a>
+                <!-- <a href="./tos/index.html">tos</a> -->
+                <a id="sign-out-link" href="auth">Sign Out</a>
+                <a id="profile-editor" href="profile-editor">Edit Profile</a>
+                <a id="profile-editor" href="/question-editor/index.html">Ask A Question</a>
+                <a id="about" href="about">About</a>
+            </nav>
+        </header>
 
-    <!-- css -->
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/global.css" />
-    <!-- add link for page specific css -->
+        <main>
+            <p id="notification-display">Search to find post</p>
 
-</head>
-
-<body>
-    <header class="page-header">
-        <img class="logo" src="/assets/html_css_js.png" alt="logo">
-        <p class="title">Supabase Web App</p>
-        <nav>
-            <a href="/">Home</a>
-            <a id="sign-out-link" href="auth">Sign Out</a>
-        </nav>
-    </header>
-
-    <main>
-
-    </main>
-
-</body>
-
+            <section id="questions-section">
+                <ul id="questions-list"></ul>
+            </section>
+            <p id="error-display"></p>
+        </main>
+    </body>
 </html>

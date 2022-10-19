@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>For (Dummy of Dummies)</title>
+        <link rel="icon" type="image/x-icon" href="/assets/download.png" />
+
+        <!-- js -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+        <script type="module" src="question-detail.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="question-detail.css" />
+        <link rel="stylesheet" href="/styles/form.css" />
+        <!-- add link for page specific css -->
+    </head>
+
+    <body>
+        <header class="page-header">
+            <img class="logo" src="/assets/logo.png" alt="logo" />
+            <p class="title">By Devs for Devs</p>
+            <!-- <p class="title">Supabase Web App</p> -->
+            <nav>
+                <a href="/">Home</a>
+                <a id="sign-out-link" href="../auth">Sign Out</a>
+                <a id="profile-editor" href="../profile-editor">Edit Profile</a>
+                <a id="profile-editor" href="/question-editor/index.html">Ask A Question</a>
+                <a id="about" href="../about/">About</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="question-summary">
+                <h1 id="question-title">Look at this post</h1>
+                <p id="question-category">JavaScript</p>
+                <p id="question-content">Mm mm so dang delicious</p>
+                <pre id="question-code-snippet">code code cody code</pre>
+                <div>
+                    <a href="question.screenshot_url" target="_blank" id="screenshot">
+                        <img
+                            id="question-screenshot"
+                            src="../assets/download.png"
+                            alt="placeholder"
+                        />
+                        *click on screenshot to enlarge*
+                    </a>
+                </div>
+            </section>
+            <!-- <ul id="answer-list">
+                <li>
+                    <div class="user-info">
+                        <h2>username</h2>
+                        <p>avatar</p>
+                        <p>timestamp</p>
+                    </div>                    
+                    <div class="answer">
+                        <p>answer</p>
+                        <p>code snippet</p>
+                        <img src="../assets/avatar.png">
+                    </div>
+                </li>
+                <li>
+                    <div class="user-info">
+                        <h2>username</h2>
+                        <p>avatar</p>
+                        <p>timestamp</p>
+                    </div>                    
+                    <div class="answer">
+                        <p>answer</p>
+                        <p>code snippet</p>
+                        <img src="../assets/avatar.png">
+                    </div>
+                </li>
+                <li>
+                    <div class="user-info">
+                        <h2>username</h2>
+                        <p>avatar</p>
+                        <p>timestamp</p>
+                    </div>                    
+                    <div class="answer">
+                        <p>answer</p>
+                        <p>code snippet</p>
+                        <img src="../assets/avatar.png">
+                    </div>
+                </li>
+            </ul> -->
+
+            <!-- <section id="form-section"> -->
+            <form id="comment-form">
+                <label>
+                    <p class="label-text"></p>
+                    <input
+                        name="comment-input"
+                        type="text"
+                        placeholder="Enter your comment here..."
+                        required
+                    />
+                </label>
+                <button id="comment-button">Submit</button>
+
+                <!-- <section id="form-section">
+                <form id="answer-form">
+                    <h3>Or this form to answer the question:</h3>
+                    <label>
+                        <p class="label-text">Answer</p>
+                        <input
+                            name="answer-input"
+                            type="text"
+                            placeholder="Enter your answer here..."
+                        />
+                    </label>
+                    <label>
+                        <p class="label-text">Code Snippet</p>
+                        <textarea
+                            name="code-text-area"
+                            id="code-text-area"
+                            cols="30"
+                            rows="10"
+                            placeholder="paste your code example here if you have one..."
+                        ></textarea>
+                    </label>
+                    <label>
+                        <p class="label-text">Answer Screenshot</p>
+                        <div id="screenshot-container">
+                            <input id="answer-image-input" name="image-input" type="file" />
+                            <img
+                                id="preview"
+                                class="avatar"
+                                src="/assets/download.png"
+                                alt="image-upload-preview"
+                            />
+                        </div>
+                    </label>
+                    <button id="answer-button">Submit your answer!</button> -->
+                <p id="error-display"></p>
+            </form>
+            <!-- </section> -->
+            <ul id="comment-list"></ul>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+*:not(.title) {
+    font-family: 'Times New Roman', Times, serif !important;
+}
+
+#code-text-area {
+    font-family: monospace !important;
+}
+
+#screenshot-container {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    justify-self: center;
+}
