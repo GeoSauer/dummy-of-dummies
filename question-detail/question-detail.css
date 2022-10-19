@@ -58,29 +58,46 @@
     margin: 10px;
 }
 
-#comment-list {
-}
 /* question styling */
 
+#question-title {
+    font-size: 2em;
+    padding-left: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+#question-category {
+}
+
 .question-summary {
-    display: grid;
-    background: lightcoral;
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    width: fit-content;
+    background: #c1c1c1;
     border-radius: 30px;
 }
 
-#question-title {
-    background: lightblue;
-}
-
 #question-content {
-    background: lightgoldenrodyellow;
+    color: black;
 }
 
 #question-code-snippet {
-    background: lightsalmon;
+    display: grid;
+    background: black;
     font-family: monospace !important;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 #question-screenshot {
+    display: grid;
     background: lightseagreen;
+    height: 200px;
+    border-radius: 5px;
+    padding: 10px;
 }
