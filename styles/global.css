@@ -118,6 +118,10 @@ main {
     text-justify: left;
 }
 
+.question-item:hover {
+    transform: scale(105%);
+}
+
 .question-container {
     display: grid;
     grid-template-columns: 200px 50px;

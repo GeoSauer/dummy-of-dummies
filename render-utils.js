@@ -44,7 +44,7 @@ export function renderQuestion(question, userId) {
 
     const img = document.createElement('img');
     img.classList.add('avatar');
-    if (question.screenshot_url.length <= 102) {
+    if (question.screenshot_url.length <= 103) {
         img.src = '/assets/avatar.png';
     } else {
         img.src = question.screenshot_url;

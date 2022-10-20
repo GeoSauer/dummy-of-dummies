@@ -130,7 +130,7 @@ function displayQuestion() {
 
     const questionCreator = renderQuestionCreator(profile);
     questionCreatorDetail.append(questionCreator);
-    if (question.screenshot_url.length <= 102) {
+    if (question.screenshot_url.length <= 103) {
         document.getElementById('screenshot').style.pointerEvents = 'none';
         document.getElementById('screenshot').style.cursor = 'default';
         screenshotCaption.textContent = 'no code screenshot provided';
