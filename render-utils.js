@@ -8,7 +8,7 @@ export function renderQuestion(question, userId) {
 
     const favoriteCount = document.createElement('span');
     favoriteCount.classList.add('favorite-count');
-    favoriteCount.textContent = `${question.favorites.length} likes`;
+    favoriteCount.textContent = question.favorites.length;
 
     const button = document.createElement('button');
     button.classList.add('favorite-button');
@@ -50,9 +50,9 @@ export function renderQuestion(question, userId) {
         img.src = question.screenshot_url;
     }
 
-    div.append(pTitle, pCategory, pContent, favoriteCount);
+    div.append(pTitle, pCategory, pContent);
     li.append(div, img);
-    a.append(li);
+    a.append(li, favoriteCount);
     questionContainer.append(a, button);
 
     return questionContainer;
