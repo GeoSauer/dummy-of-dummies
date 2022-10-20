@@ -24,12 +24,7 @@ body {
     border-right: 5px solid var(--label-color);
     box-shadow: 10px 10px 20px #00000066;
     overflow: hidden;
-    opacity: 60%;
     transition: all 250ms ease-in;
-}
-
-.nav:hover {
-    opacity: 100%;
 }
 
 .nav.n {
@@ -115,6 +110,13 @@ i {
 .closed {
     transform: translate(210px, 0);
     transition: all 250ms ease-in;
+    opacity: 60%;
+}
+
+.closed:hover {
+    transform: translate(210px, 0);
+    transition: all 250ms ease-in;
+    opacity: 100%;
 }
 
 .move-toggle {
