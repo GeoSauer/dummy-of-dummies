@@ -19,6 +19,8 @@ const errorDisplay = document.getElementById('error-display');
 const questionsList = document.getElementById('questions-list');
 const searchForm = document.getElementById('search-form');
 const notificationDisplay = document.getElementById('notification-display');
+const navSignout = document.getElementById('nav-signout');
+const navPe = document.getElementById('nav-pe');
 
 /* State */
 const user = getUser();
