@@ -1,4 +1,4 @@
-*:not(.title) {
+*:not(.title):not(.nav):not(i) {
     font-family: 'Times New Roman', Times, serif !important;
 }
 

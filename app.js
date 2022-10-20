@@ -7,7 +7,6 @@ import {
     getUser,
     getCategories,
     signOutUser,
-    updateProfile,
 } from './fetch-utils.js';
 
 // this will check if we have a user and set signout link if it exists
@@ -20,7 +19,8 @@ const questionsList = document.getElementById('questions-list');
 const searchForm = document.getElementById('search-form');
 const notificationDisplay = document.getElementById('notification-display');
 const navSignout = document.getElementById('nav-signout');
-const navPe = document.getElementById('nav-pe');
+const categorySelect = document.getElementById('category-select');
+// const navPe = document.getElementById('nav-pe');
 
 /* State */
 const user = getUser();
@@ -30,16 +30,6 @@ let categories = [];
 let count = 0;
 
 /* Events */
-// menuToggleButton.addEventListener('click', () => {
-//     console.log('click');
-//     if (navMenu.className === 'open') {
-//         navMenu.classList.add('hide');
-//         navMenu.classList.remove('open');
-//     } else if (navMenu.className === 'hide') {
-//         navMenu.classList.add('open');
-//         navMenu.classList.remove('hide');
-//     }
-// });
 
 window.addEventListener('load', async () => {
     findPost();
@@ -107,10 +97,7 @@ navSignout.addEventListener('click', () => {
     signOutUser();
 });
 
-navPe.addEventListener('click', () => {
-    updateProfile();
-});
-/* Display Functions */
+//  Display Functions
 function displayError() {
     if (error) {
         //eslint-disable-next-line no-console
