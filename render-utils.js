@@ -58,6 +58,25 @@ export function renderQuestion(question, userId) {
     return questionContainer;
 }
 
+export function renderQuestionCreator(profile) {
+    const div = document.createElement('div');
+    div.setAttribute('id', 'question-creator');
+
+    const p = document.createElement('p');
+    p.setAttribute('id', 'creator-user_name');
+    p.textContent = profile.profiles.user_name;
+
+    const img = document.createElement('img');
+    img.setAttribute('id', 'user-avatar');
+    img.src = profile.profiles.avatar_url;
+    img.alt = `${profile.profiles.user_name} avatar`;
+    img.classList.add('avatar');
+
+    div.append(p, img);
+
+    return div;
+}
+
 export function renderComment(comment) {
     const li = document.createElement('li');
     li.classList.add('comment');
