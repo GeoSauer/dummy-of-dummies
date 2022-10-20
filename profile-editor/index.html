@@ -8,7 +8,7 @@
 
         <!-- title and favicon -->
         <title>Update Profile</title>
-        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+        <link rel="icon" type="image/x-icon" href="/assets/download.png" />
 
         <!-- js -->
         <script
@@ -36,11 +36,11 @@
     <body>
         <header class="page-header">
             <img class="logo" src="/assets/logo.png" alt="logo" />
-            <p class="title"></p>
+            <p class="title">By Devs for Devs</p>
             <nav>
-                <a href="/">Home</a>
+                <!-- <a href="/">Home</a> -->
                 <a id="sign-out-link" href="../auth">Sign Out</a>
-                <a id="about" href="../about/">About</a>
+                <!-- <a id="about" href="../about/">About</a> -->
             </nav>
         </header>
 
@@ -54,21 +54,21 @@
                         alt="avatar preview"
                         src="../assets/avatar.png"
                     />
-                    >Username<input
+                    Username<input
                         name="username-input"
                         id="username-input"
                         placeholder="Enter Username..."
+                        maxlength="20"
                         required
                     />
                 </label>
-                <label> Location<input name="location-input" id="location-input" /></label>
+                <!-- <label> Location<input name="location-input" id="location-input" /></label> -->
                 <label
                     >Bio<textarea
                         name="bio-input"
                         id="bio-input"
                         placeholder="Tell us a bit about yourself..."
-                    >
-                    </textarea>
+                    ></textarea>
                 </label>
                 <button id="update-profile-button">Update</button>
             </form>

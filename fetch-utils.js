@@ -30,7 +30,7 @@ export async function signOutUser() {
 /* Data functions */
 
 export async function getCategories() {
-    return await client.from('categories').select('name');
+    return await client.from('questions').select('category');
 }
 
 export async function updateProfile(profile) {
@@ -67,11 +67,11 @@ export async function createQuestion(question) {
 export async function getQuestions(name) {
     let query = client
         .from('questions')
-        .select('*', { count: 'exact' })
-        .order('created_at')
+        .select('*, favorites:question_favorites(user_id)', { count: 'exact' })
+        .order('created_at', { ascending: false })
         .limit(50);
     if (name) {
-        query = query.ilike('title', `%${name}`);
+        query = query.ilike('title', `%${name}%`);
     }
     const response = await query;
     return response;
@@ -105,3 +105,26 @@ export function onComment(questionID, handleComment) {
 // export async function createAnswer(answer) {
 //     return await client.from('answers').insert(answer).single();
 // }
+
+export async function addFavoriteQuestion(questionId, userId) {
+    return await client
+        .from('question_favorites')
+        .upsert({ question_id: questionId, user_id: userId })
+        .single();
+}
+
+export async function removeFavoriteQuestion(questionId, userId) {
+    return await client
+        .from('question_favorites')
+        .delete()
+        .match({ question_id: questionId, user_id: userId })
+        .single();
+}
+
+export async function onFavoriteQuestion(handleFavorite, handleUnfavorite) {
+    return await client
+        .from(`question_favorites`)
+        .on('INSERT', handleFavorite)
+        .on('DELETE', handleUnfavorite)
+        .subscribe();
+}
