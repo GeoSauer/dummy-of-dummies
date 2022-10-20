@@ -30,7 +30,7 @@ export async function signOutUser() {
 /* Data functions */
 
 export async function getCategories() {
-    return await client.from('questions').select('category');
+    return await client.from('categories').select('name');
 }
 
 export async function updateProfile(profile) {
@@ -64,7 +64,7 @@ export async function createQuestion(question) {
     return await client.from('questions').insert(question).single();
 }
 
-export async function getQuestions(name) {
+export async function getQuestions(name, category) {
     let query = client
         .from('questions')
         .select('*, favorites:question_favorites(user_id)', { count: 'exact' })
@@ -73,6 +73,11 @@ export async function getQuestions(name) {
     if (name) {
         query = query.ilike('title', `%${name}%`);
     }
+
+    if (category) {
+        query = query.eq('category', category);
+    }
+
     const response = await query;
     return response;
 }
@@ -101,10 +106,6 @@ export async function getComment(id) {
 export function onComment(questionID, handleComment) {
     client.from(`comments:question_id=eq.${questionID}`).on('INSERT', handleComment).subscribe();
 }
-
-// export async function createAnswer(answer) {
-//     return await client.from('answers').insert(answer).single();
-// }
 
 export async function addFavoriteQuestion(questionId, userId) {
     return await client

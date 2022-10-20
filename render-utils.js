@@ -95,42 +95,9 @@ export function renderComment(comment) {
     return li;
 }
 
-// export function renderAnswer(answer) {
-//     const li = document.createElement('li');
-//     li.classList.add('answer');
-
-//     const pUser = document.createElement('p');
-//     pUser.classList.add('user-name');
-//     pUser.textContent = answer.profiles.user_name;
-
-//     const img = document.createElement('img');
-//     img.classList.add('user-avatar');
-//     img.src = answer.profiles.avatar_url;
-
-//     const pCreatedDate = document.createElement('p');
-//     pCreatedDate.classList.add('timestamp');
-//     pCreatedDate.textContent = new Date(answer.created_at).toLocaleString('en-US', {
-//         day: 'numeric',
-//         month: 'numeric',
-//         year: 'numeric',
-//         hour: 'numeric',
-//         minute: 'numeric',
-//     });
-
-//     const divHead = document.createElement('div');
-//     divHead.classList.add('user-info');
-//     divHead.append(pCreatedDate, pUser, img);
-
-//     const answerDiv = document.createElement('div');
-//     answerDiv.classList.add('answer-content');
-
-//     const pAnswer = document.createElement('p');
-//     pAnswer.textContent = answer.answer;
-
-//     const pCode = document.createElement('p');
-//     pCode.answerDiv.append(pAnswer);
-
-//     li.append(divHead, answerDiv);
-
-//     return li;
-// }
+export function renderCategoryOption(category) {
+    const option = document.createElement('option');
+    option.value = category.name;
+    option.textContent = category.name;
+    return option;
+}

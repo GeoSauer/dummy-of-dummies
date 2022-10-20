@@ -5,35 +5,38 @@ import {
     onFavoriteQuestion,
     removeFavoriteQuestion,
     getUser,
+    getCategories,
 } from './fetch-utils.js';
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { renderQuestion } from './render-utils.js';
+import { renderQuestion, renderCategoryOption } from './render-utils.js';
 
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
 const questionsList = document.getElementById('questions-list');
 const searchForm = document.getElementById('search-form');
 const notificationDisplay = document.getElementById('notification-display');
+const categorySelect = document.getElementById('category-select');
 
 /* State */
 const user = getUser();
 let error = null;
 let questions = [];
+let categories = [];
 let count = 0;
 
 /* Events */
 window.addEventListener('load', async () => {
     findPost();
 
-    const response = await getQuestions();
+    const response = await getCategories();
     error = response.error;
-    questions = response.data;
+    categories = response.data;
 
     if (error) {
         displayError();
     } else {
-        displayQuestions();
+        displayCategoryOptions();
     }
 
     onFavoriteQuestion(handleFavorite, handleUnfavorite);
@@ -65,11 +68,13 @@ function handleUnfavorite(payload) {
     }
 }
 
-async function findPost(name) {
+async function findPost(name, category) {
     const response = await getQuestions(name);
+    const banana = await getQuestions(category);
 
     error = response.error;
     questions = response.data;
+    categories = banana.data;
     count = response.count;
 
     displayNotifications();
@@ -83,7 +88,8 @@ async function findPost(name) {
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(searchForm);
-    findPost(formData.get('name'));
+    findPost(formData.get('name'), formData.get('category'));
+    console.log('anything');
 });
 
 /* Display Functions */
@@ -133,5 +139,12 @@ function displayNotifications() {
     } else {
         notificationDisplay.classList.remove('error');
         notificationDisplay.textContent = `Showing ${questions.length} of ${count}`;
+    }
+}
+
+function displayCategoryOptions() {
+    for (const category of categories) {
+        const option = renderCategoryOption(category);
+        categorySelect.append(option);
     }
 }
