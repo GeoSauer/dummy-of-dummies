@@ -189,3 +189,7 @@ main {
     font-size: 1.2em;
     z-index: 0;
 }
+
+a {
+    text-decoration: none;
+}
