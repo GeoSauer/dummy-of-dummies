@@ -103,6 +103,14 @@ export async function getComment(id) {
         .single();
 }
 
+export async function getQuestionCreator(id) {
+    return await client
+        .from('questions')
+        .select(`*, profiles(id, user_name, avatar_url)`)
+        .eq('id', id)
+        .single();
+}
+
 export function onComment(questionID, handleComment) {
     client.from(`comments:question_id=eq.${questionID}`).on('INSERT', handleComment).subscribe();
 }

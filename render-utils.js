@@ -8,7 +8,7 @@ export function renderQuestion(question, userId) {
 
     const favoriteCount = document.createElement('span');
     favoriteCount.classList.add('favorite-count');
-    favoriteCount.textContent = question.favorites.length;
+    favoriteCount.textContent = `${question.favorites.length} likes`;
 
     const button = document.createElement('button');
     button.classList.add('favorite-button');
@@ -50,12 +50,31 @@ export function renderQuestion(question, userId) {
         img.src = question.screenshot_url;
     }
 
-    div.append(pTitle, pCategory, pContent);
+    div.append(pTitle, pCategory, pContent, favoriteCount);
     li.append(div, img);
-    a.append(li, favoriteCount);
+    a.append(li);
     questionContainer.append(a, button);
 
     return questionContainer;
+}
+
+export function renderQuestionCreator(profile) {
+    const div = document.createElement('div');
+    div.setAttribute('id', 'question-creator');
+
+    const p = document.createElement('p');
+    p.setAttribute('id', 'creator-user_name');
+    p.textContent = profile.profiles.user_name;
+
+    const img = document.createElement('img');
+    img.setAttribute('id', 'user-avatar');
+    img.src = profile.profiles.avatar_url;
+    img.alt = `${profile.profiles.user_name} avatar`;
+    img.classList.add('avatar');
+
+    div.append(p, img);
+
+    return div;
 }
 
 export function renderComment(comment) {

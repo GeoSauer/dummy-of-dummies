@@ -50,21 +50,23 @@
             <section id="detail-comment-container">
                 <section class="question-summary">
                     <h1 id="question-title">Look at this post</h1>
-                    <p id="question-category">JavaScript</p>
+                    <div id="category-and-user-info">
+                        <p id="question-category"></p>
+                    </div>
                     <p id="question-content">Mm mm so dang delicious</p>
                     <div class="scrollbar-cover">
                         <div id="code-div">
                             <pre id="question-code-snippet">code code cody code</pre>
-                            <div>
+                            <figure>
                                 <a href="question.screenshot_url" target="_blank" id="screenshot">
                                     <img
                                         id="question-screenshot"
                                         src="../assets/download.png"
                                         alt="placeholder"
                                     />
-                                    *click on screenshot to enlarge*
+                                    <figcaption id="screenshot-caption"></figcaption>
                                 </a>
-                            </div>
+                            </figure>
                         </div>
                     </div>
                 </section>
@@ -82,7 +84,10 @@
                         <button id="comment-button">Submit</button>
                         <p id="error-display"></p>
                     </form>
-                    <ul id="comment-list"></ul>
+                    <!-- </section> -->
+                    <div id="comments-container">
+                        <ul id="comment-list"></ul>
+                    </div>
                 </section>
             </section>
         </main>
