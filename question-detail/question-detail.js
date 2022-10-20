@@ -10,6 +10,7 @@ const questionCategory = document.getElementById('question-category');
 const questionContent = document.getElementById('question-content');
 const questionCodeSnippet = document.getElementById('question-code-snippet');
 const questionScreenshot = document.getElementById('question-screenshot');
+const screenshot = document.getElementById('screenshot');
 
 const errorDisplay = document.getElementById('error-display');
 // const answerForm = document.getElementById('answer-form');
@@ -118,6 +119,7 @@ function displayQuestion() {
     questionCodeSnippet.textContent = question.code_text;
     questionScreenshot.src = question.screenshot_url;
     questionScreenshot.alt = `${question.title} image`;
+    screenshot.href = question.screenshot_url;
 }
 
 function displayComments() {

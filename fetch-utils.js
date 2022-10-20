@@ -68,7 +68,7 @@ export async function getQuestions(name) {
     let query = client
         .from('questions')
         .select('*, favorites:question_favorites(user_id)', { count: 'exact' })
-        .order('created_at')
+        .order('created_at', { ascending: false })
         .limit(50);
     if (name) {
         query = query.ilike('title', `%${name}%`);
