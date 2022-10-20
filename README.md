@@ -1,26 +1,37 @@
-## The Golden Rule:
+![logo](/assets/logo.png)
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+## What is FOR(DUMMYOFDUMMIES)?
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+Along our personal journeys to become software developers we all noticed that, while some websites are absolutely stacked and overflowing with helpful information, they can also be overflowing with people not exactly thrilled to share information with those new to coding. We can't weed out all the bad eggs, but we aimed to create a space with the newer devs in mind that is geared specifically towards beginner questions and patient advice.
 
-## Making a plan
+##DEV Team
 
-1. **Make a drawing of your app. Simple "wireframes"**
-1. **Once you have a drawing, name the HTML elements you'll need to realize your vision**
-1. **For each HTML element ask: Why do I need this?**
-1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How"**
-1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change?**
-1. **Think about how to validate each of your features according to a Definition of Done**
-1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+-   Lexus Banton-- [GitHub](https://github.com/Lexus-Banton) | [LinkedIn](https://www.linkedin.com/in/lexus-banton/)
+-   Jackson Kelly-- [GitHub](https://github.com/Volantstream19) | [LinkedIn](https://www.linkedin.com/in/jackson-kelly-26999a201/)
+-   Geo Sauer-- [GitHub](https://github.com/GeoSauer) | [LinkedIn](https://www.linkedin.com/in/geosauer)
+-   Jake Doherty-- [GitHub](https://github.com/Jake-Doherty) | [LinkedIn](https://www.linkedin.com/in/jacob-doherty1/)
 
-Additional considerations:
+## How it Works
 
--   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
--   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
-    -   What are the key/value pairs?
-    -   What arrays might you need?
-    -   What needs to live in a persistence layer?
--   Is there some state we need to initialize?
--   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+-   Auth page where new members can sign up or existing members can sign in
+-   A terms of service outlining the rules and atmosphere of the page that must be agreed to in order to become a member
+-   Create a profile in order to view and create questions and comments
+-   A full list of member-asked questions that can be sorted by keyword and/or specific category
+-   Users can 'like' questions that they want to keep track of for later viewing
+-   User can add and view comments on each question in realtime to easily collaborate
+
+## Deployed Site:
+
+[Via Netlify](https://dummy-of-dummies.netlify.app)
+
+## A Glimpse Inside Our Minds:
+
+[Here's our Whimsical Board](https://whimsical.com/stack-overflow-for-dummy-of-dummies-BL5UcDA9zyvbtpYeLSWBp1)
+
+## Technologies:
+
+| Frontend Tech | Backend Tech |
+| ------------- | ------------ |
+| HTML          | Supabase     |
+| CSS           |              |
+| JavaScript    |              |

@@ -1,18 +1,52 @@
-#comment-form {
+#detail-comment-container {
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 100px;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+}
+
+#comment-form {
+    margin: 0 auto 10px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
     align-items: end;
     padding: 0px 10px 0px 10px;
+    align-content: center;
+}
+
+#comment-form input {
+    position: relative;
+    top: 9px;
 }
 
 #comment-form button {
     height: 35px;
+    position: relative;
+    top: 9px;
 }
 
 h1 {
     margin: 0;
 }
+
 /* comment styling */
+#comments-container {
+    height: 81vh;
+    background: var(--offset-color);
+    border: 5px solid #c1c1c1;
+    box-shadow: inset 0px 0px 5px 1px black;
+    border-radius: 15px;
+    scroll-behavior: smooth;
+}
+
+#comment-list {
+    margin-top: 3px;
+    margin-bottom: 5px;
+    height: 79.4vh;
+    overflow: auto;
+    padding-right: 20px;
+}
 
 .user-name {
     font-weight: bold;
@@ -52,7 +86,7 @@ h1 {
 
 .comment {
     display: grid;
-    width: 100%;
+    width: 97.8%;
     grid-template-columns: 200px 1fr;
     margin: 10px;
 }
@@ -60,46 +94,157 @@ h1 {
 /* question styling */
 
 #question-title {
-    font-size: 2em;
+    font-size: 2vw;
     padding-left: 20px;
     font-weight: bold;
     color: black;
+    text-align: center;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 #question-category {
+    height: 20px;
+    margin: 0;
     color: black;
+    align-self: center;
+    justify-self: center;
+}
+
+#question-creator {
+    height: 36px;
+    display: grid;
+    grid-template-columns: 1fr 36px;
+    margin: 0;
+    justify-self: end;
+}
+
+#creator-user_name {
+    position: relative;
+    top: -9px;
+    right: 10px;
+    justify-self: center;
 }
 
 .question-summary {
     display: grid;
-    grid-template-rows: 2em 1em minmax(25px, 100px) 1fr 200px;
+    width: 100%;
+    height: 87vh;
+    grid-template-rows: min-content 36px min-content min-content;
     padding: 20px;
-    width: fit-content;
     background: #c1c1c1;
     border-radius: 30px;
-    gap: 20px;
+    gap: 10px;
+    word-wrap: break-word;
+}
+
+#category-and-user-info {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    height: fit-content;
+}
+
+#question-content::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+#question-content::-webkit-scrollbar-track {
+    display: none;
+}
+
+#question-content::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(245, 245, 245, 0.295);
+}
+
+#question-content::-webkit-scrollbar-thumb:hover {
+    border: 1px solid rgb(46, 46, 46);
+    background: white;
+}
+
+#question-content::-webkit-scrollbar-button {
+    height: 10px;
+    width: 10px;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+#question-content::-webkit-scrollbar-corner {
+    display: none;
 }
 
 #question-content {
-    color: black;
+    padding: 5px;
     height: fit-content;
+    max-height: 200px;
+    gap: 5px;
+    margin: 0;
+    color: black;
+    overflow: auto;
+    box-shadow: inset 0 0 3px 1px black;
+    border-radius: 5px;
+}
+
+#code-div {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+}
+
+/*                  code snippet scroll bar */
+#question-code-snippet::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+#question-code-snippet::-webkit-scrollbar-track {
+    display: none;
+}
+
+#question-code-snippet::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(245, 245, 245, 0.295);
+}
+
+#question-code-snippet::-webkit-scrollbar-thumb:hover {
+    border: 1px solid rgb(46, 46, 46);
+    background: white;
+}
+
+#question-code-snippet::-webkit-scrollbar-button {
+    height: 10px;
+    width: 10px;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+#question-code-snippet::-webkit-scrollbar-corner {
+    display: none;
 }
 
 #question-code-snippet {
-    display: grid;
+    margin: 0;
     background: black;
     font-family: monospace !important;
-    width: fit-content;
-    height: fit-content;
+    min-height: 20vh;
+    max-height: 40vh;
     justify-content: center;
     padding: 10px;
     border-radius: 5px;
+    overflow: auto;
 }
 
 #question-screenshot {
+    margin: 0 auto;
     display: grid;
     background: lightseagreen;
-    height: 200px;
+    width: 19vw;
     border-radius: 5px;
-    padding: 10px;
+}
+
+figcaption {
+    text-align: center;
 }

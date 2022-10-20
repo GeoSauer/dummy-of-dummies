@@ -33,18 +33,21 @@
 
     <body>
         <header class="page-header">
-            <img class="logo" src="/assets/logo.png" alt="logo" />
-            <p class="title">By Devs for Devs</p>
+            <span class="span">
+                <img class="logo" src="/assets/logo.png" alt="logo" />
+                <p class="title">By Devs for Devs</p>
+            </span>
+
+            <section class="search">
+                <form id="search-form">
+                    <input name="name" placeholder="Search by title or category..." size="40" />
+                    <select name="category" id="category-select">
+                        <option value="">Category</option>
+                    </select>
+                    <button>Search</button>
+                </form>
+            </section>
             <nav>
-                <section class="search">
-                    <form id="search-form">
-                        <input name="name" placeholder="Search..." size="40" />
-                        <!-- <select name="tags" id="tag-select">
-                            <option value="">Tags</option> -->
-                        <!-- </select> -->
-                        <button>Search</button>
-                    </form>
-                </section>
                 <a href="/">Home</a>
                 <!-- <a href="./tos/index.html">tos</a> -->
                 <a id="sign-out-link" href="auth">Sign Out</a>
