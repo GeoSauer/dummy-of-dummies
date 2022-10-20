@@ -6,7 +6,9 @@ import {
     removeFavoriteQuestion,
     getUser,
     getCategories,
+    signOutUser,
 } from './fetch-utils.js';
+
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
 import { renderQuestion, renderCategoryOption } from './render-utils.js';
@@ -16,7 +18,9 @@ const errorDisplay = document.getElementById('error-display');
 const questionsList = document.getElementById('questions-list');
 const searchForm = document.getElementById('search-form');
 const notificationDisplay = document.getElementById('notification-display');
+const navSignout = document.getElementById('nav-signout');
 const categorySelect = document.getElementById('category-select');
+// const navPe = document.getElementById('nav-pe');
 
 /* State */
 const user = getUser();
@@ -26,6 +30,7 @@ let categories = [];
 let count = 0;
 
 /* Events */
+
 window.addEventListener('load', async () => {
     findPost();
 
@@ -88,7 +93,11 @@ searchForm.addEventListener('submit', (e) => {
     findPost(formData.get('name'), formData.get('category'));
 });
 
-/* Display Functions */
+navSignout.addEventListener('click', () => {
+    signOutUser();
+});
+
+//  Display Functions
 function displayError() {
     if (error) {
         //eslint-disable-next-line no-console
