@@ -91,7 +91,7 @@ main {
 
 #questions-list {
     display: grid;
-    grid-template: repeat(auto-fill, 150px) / repeat(auto-fill, 250px);
+    grid-template: repeat(auto-fill, 128px) / repeat(auto-fill, 250px);
     grid-auto-flow: row;
     padding: 10px;
     gap: 10px;
