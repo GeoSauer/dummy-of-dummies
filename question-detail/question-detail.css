@@ -6,14 +6,24 @@
 }
 
 #comment-form {
+    margin: 0 auto 10px;
+    height: 50px;
     display: grid;
-    grid-template-columns: 1fr 100px;
+    grid-template-columns: 4fr 1fr;
     align-items: end;
     padding: 0px 10px 0px 10px;
+    align-content: center;
+}
+
+#comment-form input {
+    position: relative;
+    top: 9px;
 }
 
 #comment-form button {
     height: 35px;
+    position: relative;
+    top: 9px;
 }
 
 h1 {
@@ -21,9 +31,23 @@ h1 {
 }
 
 /* comment styling */
+#comments-container {
+    height: 81vh;
+    background: var(--offset-color);
+    border: 5px solid #c1c1c1;
+    box-shadow: inset 0px 0px 5px 1px black;
+    border-radius: 15px;
+    scroll-behavior: smooth;
+}
+
 #comment-list {
+    margin-top: 3px;
+    margin-bottom: 5px;
+    height: 79.4vh;
+    overflow: auto;
     padding-right: 20px;
 }
+
 .user-name {
     font-weight: bold;
 }
@@ -62,7 +86,7 @@ h1 {
 
 .comment {
     display: grid;
-    width: 100%;
+    width: 97.8%;
     grid-template-columns: 200px 1fr;
     margin: 10px;
 }
