@@ -1,37 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+body {
+    width: 100vw;
+    overflow: hidden;
+}
+
 .nav {
     display: block;
     border-radius: 20px 0px 0px 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(215%, 8%);
+    position: relative;
+    top: 21.9vh;
+    left: 54.1vw;
+    /* transform: translate(680px, 205px); */
     color: #fff;
     background: #510a32;
     height: 495px;
-    padding: 0px 0px 0px 20px;
+    padding: 0px 0px 0px 0px;
     width: 300px;
     border-right: 5px solid #c72c41;
     box-shadow: 10px 10px 20px #00000066;
     overflow: hidden;
-    transition: 200ms ease-in-out;
+    transition: 250ms ease-in;
 }
 .nav.n {
     width: 75px;
 }
-.nav.navcollapse .nav-item .nav-item-title {
+/* .nav.navcollapse .nav-item .nav-item-title {
     transition: 200ms ease-in-out;
     opacity: 0;
-}
+} */
 .nav-item {
-    /display: flex;
+    display: flex;
+    flex-direction: column;
     padding: 20px 0px 20px 20px;
     border-radius: 20px 0px 0px 20px;
     font-size: 20px;
     white-space: nowrap;
 }
 .nav-item.nav-itemC {
+    display: flex;
+    flex-direction: row;
     cursor: pointer;
 }
 .nav-item i {
@@ -51,10 +59,11 @@
     line-height: 50px;
     border-radius: 500px;
     background: #801336;
-    transition: 200ms ease-in-out;
+    transition: 250ms ease-in;
 }
 .nav-item.nav-toggle i {
-    padding-right: 50px;
+    padding-right: 0;
+    padding-top: 15px;
 }
 /* margin: auto; */
 
@@ -91,4 +100,14 @@
 
 i {
     text-decoration: none;
+}
+
+.closed {
+    transform: translate(210px, 0);
+    transition: all 250ms ease-in;
+}
+
+.move-toggle {
+    transform: translateX(-200px);
+    transition: all 250ms ease-in;
 }

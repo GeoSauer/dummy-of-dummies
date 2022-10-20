@@ -9,6 +9,8 @@ const errorDisplay = document.getElementById('error-display');
 const questionsList = document.getElementById('questions-list');
 const searchForm = document.getElementById('search-form');
 const notificationDisplay = document.getElementById('notification-display');
+// const menuToggleButton = document.querySelector('.nav-toggle');
+// const navMenu = document.querySelector('.nav');
 
 /* State */
 let error = null;
@@ -16,6 +18,17 @@ let questions = [];
 let count = 0;
 
 /* Events */
+// menuToggleButton.addEventListener('click', () => {
+//     console.log('click');
+//     if (navMenu.className === 'open') {
+//         navMenu.classList.add('hide');
+//         navMenu.classList.remove('open');
+//     } else if (navMenu.className === 'hide') {
+//         navMenu.classList.add('open');
+//         navMenu.classList.remove('hide');
+//     }
+// });
+
 window.addEventListener('load', async () => {
     findPost();
 

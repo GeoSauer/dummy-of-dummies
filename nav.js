@@ -18,6 +18,8 @@ function updateNav(el) {
 }
 
 function toggleNav() {
-    $('.nav').toggleClass('navcollapse');
-    $('.nav-toggle').toggleClass('toggleIcon');
+    // $('.nav').toggleClass('navcollapse');
+    $('.nav').toggleClass('closed');
+    $('.nav-toggle').toggleClass('move-toggle');
+    $('.toggle-image').toggleClass('toggleIcon');
 }
