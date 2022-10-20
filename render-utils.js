@@ -97,7 +97,7 @@ export function renderComment(comment) {
 
 export function renderCategoryOption(category) {
     const option = document.createElement('option');
-    option.value = category.name;
-    option.textContent = category.name;
+    option.value = category.category;
+    option.textContent = category.category;
     return option;
 }
