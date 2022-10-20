@@ -5,23 +5,33 @@ body {
     overflow: hidden;
 }
 
+#questions-section {
+    margin: 0 10px;
+}
+
 .nav {
     display: block;
     border-radius: 20px 0px 0px 20px;
-    position: relative;
-    top: 21.9vh;
-    left: 54.1vw;
+    position: absolute;
+    top: 80px;
+    right: 0;
     /* transform: translate(680px, 205px); */
     color: #fff;
     background: #510a32;
     height: 495px;
     padding: 0px 0px 0px 0px;
-    width: 300px;
+    width: 275px;
     border-right: 5px solid #c72c41;
     box-shadow: 10px 10px 20px #00000066;
     overflow: hidden;
-    transition: 250ms ease-in;
+    opacity: 60%;
+    transition: 250ms ease-in-out;
 }
+
+.nav:hover {
+    opacity: 100%;
+}
+
 .nav.n {
     width: 75px;
 }
@@ -32,7 +42,7 @@ body {
 .nav-item {
     display: flex;
     flex-direction: column;
-    padding: 20px 0px 20px 20px;
+    padding: 20px 0px 20px 10px;
     border-radius: 20px 0px 0px 20px;
     font-size: 20px;
     white-space: nowrap;
@@ -108,6 +118,6 @@ i {
 }
 
 .move-toggle {
-    transform: translateX(-200px);
+    transform: translateX(-190px);
     transition: all 250ms ease-in;
 }

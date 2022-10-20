@@ -15,8 +15,8 @@
             defer
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
-        <script type="module" src="app.js"></script>
-        <script type="module" src="nav.js"></script>
+        <script type="module" src="/app.js"></script>
+        <script type="module" src="/nav.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -52,43 +52,12 @@
                 </div>
             </section>
 
-            <div class="nav">
-                <div class="nav-item">
-                    <div class="nav-item nav-itemC">
-                        <i class="fa-solid fa-house"></i>
-                        <span class="nav-item-title">Home</span>
-                    </div>
-                    <div class="nav-item nav-itemC">
-                        <i class="fa-solid fa-user"></i>
-                        <span class="nav-item-title">Edit Profile</span>
-                    </div>
-                    <div class="nav-item nav-itemC">
-                        <i class="fa-solid fa-question"></i>
-                        <span class="nav-item-title">Question Editor</span>
-                    </div>
-                    <div class="nav-item nav-itemC">
-                        <i class="fa-solid fa-circle-info"></i>
-                        <span class="nav-item-title">About</span>
-                    </div>
-                    <a href="/auth/">
-                        <div class="nav-item nav-itemC">
-                            <i class="fas fa-sign-out-alt"></i>
-                            <span class="nav-item-title">Sign Out</span>
-                        </div>
-                    </a>
-
-                    <div class="nav-item"></div>
-                    <div class="nav-item nav-toggle">
-                        <i class="fas fa-angle-double-left toggle-image"></i>
-                    </div>
-                </div>
-            </div>
-            <nav>
+            <nav class="hidden">
                 <a href="/">Home</a>
                 <!-- <a href="./tos/index.html">tos</a> -->
                 <a id="sign-out-link" href="auth">Sign Out</a>
                 <a id="profile-editor" href="profile-editor">Edit Profile</a>
-                <a id="profile-editor" href="/question-editor/index.html">Ask A Question</a>
+                <a id="question-editor" href="/question-editor/index.html">Ask A Question</a>
                 <a id="about" href="about">About</a>
             </nav>
         </header>
@@ -101,6 +70,45 @@
             </section>
             <!--Jquery CDN Link-->
             <p id="error-display"></p>
+            <div class="nav closed">
+                <div class="nav-item">
+                    <a href="/index.html">
+                        <div class="nav-item nav-itemC">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="nav-item-title">Home</span>
+                        </div>
+                    </a>
+                    <a href="/profile-editor/index.html">
+                        <div class="nav-item nav-itemC">
+                            <i class="fa-solid fa-user"></i>
+                            <span class="nav-item-title">Edit Profile</span>
+                        </div>
+                    </a>
+                    <a href="/question-editor/index.html">
+                        <div class="nav-item nav-itemC">
+                            <i class="fa-solid fa-question"></i>
+                            <span class="nav-item-title">Question Editor</span>
+                        </div>
+                    </a>
+                    <a href="/about/index.html">
+                        <div class="nav-item nav-itemC">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span class="nav-item-title">About</span>
+                        </div>
+                    </a>
+                    <a href="auth">
+                        <div class="nav-item nav-itemC">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span class="nav-item-title">Sign Out</span>
+                        </div>
+                    </a>
+
+                    <div class="nav-item"></div>
+                    <div class="nav-item nav-toggle move-toggle">
+                        <i class="fas fa-angle-double-left toggle-image"></i>
+                    </div>
+                </div>
+            </div>
         </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="app.js"></script>

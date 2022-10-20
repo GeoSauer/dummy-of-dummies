@@ -18,6 +18,7 @@ body {
     background: var(--background);
     display: grid;
     grid-template-rows: auto 1fr;
+    /* background: url('/assets/everything-as-code.jpg'); */
 }
 
 .page-header {
@@ -182,4 +183,5 @@ main {
     justify-self: center;
     background: none;
     font-size: 1.2em;
+    z-index: 0;
 }
