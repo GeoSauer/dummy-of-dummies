@@ -70,7 +70,6 @@ body {
     padding-right: 0;
     padding-top: 15px;
 }
-/* margin: auto; */
 
 .nav-item.nav-toggle.toggleIcon {
     transform: rotateZ(-180deg);
@@ -87,7 +86,7 @@ body {
     width: 30px;
     right: 0px;
     border-radius: 30px;
-    background: var(--action-color);
+    background: #510a32;
 }
 .nav-item.nav-active::after {
     top: -30px;
