@@ -43,13 +43,13 @@
             </span>
 
             <section class="search">
-                <div id="search-form">
-                    <input name="name" placeholder="Search..." size="40" />
-                    <select name="tags" id="tag-select">
-                        <option value="">Tags</option>
+                <form id="search-form">
+                    <input name="name" placeholder="Search by title or category..." size="40" />
+                    <select name="category" id="category-select">
+                        <option value="">Category</option>
                     </select>
                     <button>Search</button>
-                </div>
+                </form>
             </section>
 
             <nav class="hidden">
@@ -127,9 +127,7 @@
                 <ul id="questions-list"></ul> -->
             </section>
           
-            <!--Jquery CDN Link-->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script src="app.js"></script>
+           
           
             <p id="error-display"></p>
             
