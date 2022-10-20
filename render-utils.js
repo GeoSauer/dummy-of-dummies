@@ -8,7 +8,7 @@ export function renderQuestion(question, userId) {
 
     const favoriteCount = document.createElement('span');
     favoriteCount.classList.add('favorite-count');
-    favoriteCount.textContent = question.favorites.length;
+    favoriteCount.textContent = `${question.favorites.length} Likes`;
 
     const button = document.createElement('button');
     button.classList.add('favorite-button');
