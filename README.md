@@ -35,3 +35,7 @@ Along our personal journeys to become software developers we all noticed that, w
 | HTML          | Supabase     |
 | CSS           |              |
 | JavaScript    |              |
+
+## Assets
+
+We used some visual assets created by [bqlqn](https://www.flaticon.com/free-icons/visit) and [Freepik](https://www.flaticon.com/free-icons/dashboard)
