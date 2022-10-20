@@ -1,27 +1,30 @@
 import './auth/user.js';
+const navItemC = document.querySelector('.nav-itemC');
 
-$('.nav-itemC').on('click', function (e) {
-    updateNav($(this));
+const navToggle = document.querySelector('.nav-toggle');
+
+navItemC.addEventListener('click', (e) => {
+    e.preventDefault();
+    updateNav(document.querySelector(this));
 });
 
-$('.nav-toggle').on('click', function (e) {
+navToggle.addEventListener('click', (e) => {
+    e.preventDefault();
     toggleNav();
 });
 
 function updateNav(el) {
-    if ($(el).hasClass('nav-toggle')) return;
+    if (document.querySelector(el).classList.contains('nav-toggle')) return;
 
-    $('.nav-itemC').removeClass('nav-active');
-    $('.nav-itemC').removeClass('nav-activeBefore');
-    $('.nav-itemC').removeClass('nav-activeAfter');
-    $(el).addClass('nav-active');
-    $(el).prev().addClass('nav-activeBefore');
-    $(el).next().addClass('nav-activeAfter');
+    document.querySelector('.nav-itemC').classList.remove('nav-active');
+    document.querySelector('.nav-itemC').classList.remove('nav-activeBefore');
+    document.querySelector('.nav-itemC').classList.remove('nav-activeAfter');
+    document.querySelector(el).classList.add('nav-active');
+    document.querySelector(el).previousElementSibling.classList.add('nav-activeBefore');
+    document.querySelector(el).nextElementSibling.classList.add('nav-activeAfter');
 }
 
 function toggleNav() {
-    // $('.nav').toggleClass('navcollapse');
-    $('.nav').toggleClass('closed');
-    $('.nav-toggle').toggleClass('move-toggle');
-    $('.toggle-image').toggleClass('toggleIcon');
+    document.querySelector('.nav').classList.toggle('closed');
+    document.querySelector('.nav-toggle').classList.toggle('move-toggle');
 }
