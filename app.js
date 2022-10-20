@@ -5,23 +5,24 @@ import {
     onFavoriteQuestion,
     removeFavoriteQuestion,
     getUser,
+    getCategories,
 } from './fetch-utils.js';
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { renderQuestion } from './render-utils.js';
+import { renderQuestion, renderCategoryOption } from './render-utils.js';
 
 /* Get DOM Elements */
 const errorDisplay = document.getElementById('error-display');
 const questionsList = document.getElementById('questions-list');
 const searchForm = document.getElementById('search-form');
 const notificationDisplay = document.getElementById('notification-display');
-// const menuToggleButton = document.querySelector('.nav-toggle');
-// const navMenu = document.querySelector('.nav');
+const categorySelect = document.getElementById('category-select');
 
 /* State */
 const user = getUser();
 let error = null;
 let questions = [];
+let categories = [];
 let count = 0;
 
 /* Events */
@@ -39,14 +40,14 @@ let count = 0;
 window.addEventListener('load', async () => {
     findPost();
 
-    const response = await getQuestions();
+    const response = await getCategories();
     error = response.error;
-    questions = response.data;
+    categories = response.data;
 
     if (error) {
         displayError();
     } else {
-        displayQuestions();
+        displayCategoryOptions();
     }
 
     onFavoriteQuestion(handleFavorite, handleUnfavorite);
@@ -78,9 +79,8 @@ function handleUnfavorite(payload) {
     }
 }
 
-async function findPost(name) {
-    const response = await getQuestions(name);
-
+async function findPost(name, category) {
+    const response = await getQuestions(name, category);
     error = response.error;
     questions = response.data;
     count = response.count;
@@ -96,7 +96,7 @@ async function findPost(name) {
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(searchForm);
-    findPost(formData.get('name'));
+    findPost(formData.get('name'), formData.get('category'));
 });
 
 /* Display Functions */
@@ -146,5 +146,13 @@ function displayNotifications() {
     } else {
         notificationDisplay.classList.remove('error');
         notificationDisplay.textContent = `Showing ${questions.length} of ${count}`;
+    }
+}
+
+function displayCategoryOptions() {
+    const uniqueCategories = [...new Set(categories.map((question) => question.category))];
+    for (const category of uniqueCategories) {
+        const option = renderCategoryOption(category);
+        categorySelect.append(option);
     }
 }
