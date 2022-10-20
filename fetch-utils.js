@@ -75,7 +75,7 @@ export async function getQuestions(name, category) {
     }
 
     if (category) {
-        query = query.eq('category', `%${category}%`);
+        query = query.eq('category', category);
     }
 
     const response = await query;

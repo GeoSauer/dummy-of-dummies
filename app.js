@@ -69,12 +69,9 @@ function handleUnfavorite(payload) {
 }
 
 async function findPost(name, category) {
-    const response = await getQuestions(name);
-    const banana = await getQuestions(category);
-
+    const response = await getQuestions(name, category);
     error = response.error;
     questions = response.data;
-    categories = banana.data;
     count = response.count;
 
     displayNotifications();
@@ -89,7 +86,6 @@ searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(searchForm);
     findPost(formData.get('name'), formData.get('category'));
-    console.log('anything');
 });
 
 /* Display Functions */
@@ -143,7 +139,8 @@ function displayNotifications() {
 }
 
 function displayCategoryOptions() {
-    for (const category of categories) {
+    const uniqueCategories = [...new Set(categories.map((question) => question.category))];
+    for (const category of uniqueCategories) {
         const option = renderCategoryOption(category);
         categorySelect.append(option);
     }
