@@ -6,11 +6,10 @@ Along our personal journeys to become software developers we all noticed that, w
 
 ##DEV Team
 
--   Lexus Banton-- [GitHub] (https://github.com/Lexus-Banton) | [LinkedIn] (https://www.linkedin.com/in/lexus-banton/)
--   Jackson Kelly-- [GitHub] (https://github.com/Volantstream19) | [LinkedIn] (https://www.linkedin.com/in/jackson-kelly-26999a201/)
--   Geo Sauer-- [GitHub] (https://github.com/GeoSauer) | [LinkedIn] (https://www.linkedin.com/in/geosauer
-    )
--   Jake Doherty-- [GitHub] (https://github.com/Jake-Doherty) | [LinkedIn] (https://www.linkedin.com/in/jacob-doherty1/)
+-   Lexus Banton-- [GitHub](https://github.com/Lexus-Banton) | [LinkedIn](https://www.linkedin.com/in/lexus-banton/)
+-   Jackson Kelly-- [GitHub](https://github.com/Volantstream19) | [LinkedIn](https://www.linkedin.com/in/jackson-kelly-26999a201/)
+-   Geo Sauer-- [GitHub](https://github.com/GeoSauer) | [LinkedIn](https://www.linkedin.com/in/geosauer)
+-   Jake Doherty-- [GitHub](https://github.com/Jake-Doherty) | [LinkedIn](https://www.linkedin.com/in/jacob-doherty1/)
 
 ## How it Works
 
