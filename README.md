@@ -26,7 +26,7 @@ Along our personal journeys to become software developers we all noticed that, w
 
 ## A Glimpse Inside Our Minds:
 
-[Here's our Whimsical Board]([https://whimsical.com/stack-overflow-for-dummy-of-dummies-BL5UcDA9zyvbtpYeLSWBp1](https://whimsical.com/stack-overflow-for-dummy-of-dummies-BL5UcDA9zyvbtpYeLSWBp1@3CRerdhrAw85i1iCixGSiM3T)
+[Here's our Whimsical Board](https://whimsical.com/stack-overflow-for-dummy-of-dummies-BL5UcDA9zyvbtpYeLSWBp1](https://whimsical.com/stack-overflow-for-dummy-of-dummies-BL5UcDA9zyvbtpYeLSWBp1@3CRerdhrAw85i1iCixGSiM3T)
 
 ## Technologies:
 
