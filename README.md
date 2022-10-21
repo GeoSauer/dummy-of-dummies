@@ -4,7 +4,7 @@
 
 Along our personal journeys to become software developers we all noticed that, while some websites are absolutely stacked and overflowing with helpful information, they can also be overflowing with people not exactly thrilled to share information with those new to coding. We can't weed out all the bad eggs, but we aimed to create a space with the newer devs in mind that is geared specifically towards beginner questions and patient advice.
 
-##DEV Team
+## DEV Team
 
 -   Lexus Banton-- [GitHub](https://github.com/Lexus-Banton) | [LinkedIn](https://www.linkedin.com/in/lexus-banton/)
 -   Jackson Kelly-- [GitHub](https://github.com/Volantstream19) | [LinkedIn](https://www.linkedin.com/in/jackson-kelly-26999a201/)
