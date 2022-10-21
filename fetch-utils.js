@@ -64,15 +64,20 @@ export async function createQuestion(question) {
     return await client.from('questions').insert(question).single();
 }
 
-export async function getQuestions(name) {
+export async function getQuestions(name, category) {
     let query = client
         .from('questions')
         .select('*, favorites:question_favorites(user_id)', { count: 'exact' })
-        .order('created_at')
+        .order('created_at', { ascending: false })
         .limit(50);
     if (name) {
         query = query.ilike('title', `%${name}%`);
     }
+
+    if (category) {
+        query = query.eq('category', category);
+    }
+
     const response = await query;
     return response;
 }
@@ -98,13 +103,17 @@ export async function getComment(id) {
         .single();
 }
 
+export async function getQuestionCreator(id) {
+    return await client
+        .from('questions')
+        .select(`*, profiles(id, user_name, avatar_url)`)
+        .eq('id', id)
+        .single();
+}
+
 export function onComment(questionID, handleComment) {
     client.from(`comments:question_id=eq.${questionID}`).on('INSERT', handleComment).subscribe();
 }
-
-// export async function createAnswer(answer) {
-//     return await client.from('answers').insert(answer).single();
-// }
 
 export async function addFavoriteQuestion(questionId, userId) {
     return await client

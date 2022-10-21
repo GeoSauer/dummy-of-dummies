@@ -16,6 +16,7 @@
             src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
         ></script>
         <script type="module" src="./question-editor.js"></script>
+        <script type="module" src="/nav.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,6 +25,7 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
         />
+        
 
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
@@ -31,25 +33,25 @@
         <!-- add link for page specific css -->
         <link rel="stylesheet" href="/question-editor/question-editor.css" />
         <link rel="stylesheet" href="/styles/form.css" />
+        <link rel="stylesheet" href="/styles/nav.css" />
+
+        <!--Fontawsome CDN Link-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" />
     </head>
 
     <body>
         <header class="page-header">
             <img class="logo" src="/assets/logo.png" alt="logo" />
             <p class="title">By Devs for Devs</p>
-            <nav>
-                <a href="/">Home</a>
-                <a id="sign-out-link" href="/auth">Sign Out</a>
-                <a id="profile-editor" href="../profile-editor">Edit Profile</a>
-                <a id="about" href="../about">About</a>
-            </nav>
+
+            
         </header>
 
         <main>
             <section id="form-section">
                 <form id="question-form">
                     <label>
-                        <p class="label-text">Question</p>
+                        <p class="label-text">Brief Question Summary</p>
                         <input
                             name="question-title"
                             id="question-title"
@@ -74,13 +76,13 @@
                         </select>
                     </label>
                     <label>
-                        <p class="label-text">Question</p>
+                        <p class="label-text">Question Detail</p>
                         <textarea
                             name="question-text-area"
                             id="question-text-area"
                             cols="30"
                             rows="10"
-                            placeholder="question goes here..."
+                            placeholder="Type your full question goes here..."
                             required
                         ></textarea>
                     </label>
@@ -111,5 +113,44 @@
                 </form>
             </section>
         </main>
+        <div class="nav closed">
+            <a href="/">
+            <div class="nav-item">
+                <div class="nav-item nav-itemC">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="nav-item-title">Home</span>
+                </div></a>
+                <a id="nav-pe" href="../profile-editor/">
+                    <div class="nav-item nav-itemC">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="nav-item-title">Edit Profile</span>
+                    </div></a>
+                
+                <a href="../question-editor/">
+                    <div class="nav-item nav-itemC">
+                        <i class="fa-solid fa-question"></i>
+                        <span class="nav-item-title">Question Editor</span>
+                    </div></a
+                >
+                <a href="../about/">
+                    <div class="nav-item nav-itemC">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span class="nav-item-title">About</span>
+                    </div></a
+                >
+                <a id="nav-signout" href="../auth/">
+                    <div class="nav-item nav-itemC">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item-title">Sign Out</span>
+                    </div>
+                </a>
+
+                <div class="nav-item"></div>
+                <div class="nav-item nav-toggle move-toggle">
+                    <i class="fas fa-angle-double-left"></i>
+                </div>
+            </div>
+        </div>
+        
     </body>
 </html>

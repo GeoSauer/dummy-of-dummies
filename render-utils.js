@@ -8,7 +8,7 @@ export function renderQuestion(question, userId) {
 
     const favoriteCount = document.createElement('span');
     favoriteCount.classList.add('favorite-count');
-    favoriteCount.textContent = question.favorites.length;
+    favoriteCount.textContent = `${question.favorites.length} Likes`;
 
     const button = document.createElement('button');
     button.classList.add('favorite-button');
@@ -44,7 +44,11 @@ export function renderQuestion(question, userId) {
 
     const img = document.createElement('img');
     img.classList.add('avatar');
-    img.src = question.screenshot_url;
+    if (question.screenshot_url.length <= 103) {
+        img.src = '/assets/avatar.png';
+    } else {
+        img.src = question.screenshot_url;
+    }
 
     div.append(pTitle, pCategory, pContent);
     li.append(div, img);
@@ -52,6 +56,25 @@ export function renderQuestion(question, userId) {
     questionContainer.append(a, button);
 
     return questionContainer;
+}
+
+export function renderQuestionCreator(profile) {
+    const div = document.createElement('div');
+    div.setAttribute('id', 'question-creator');
+
+    const p = document.createElement('p');
+    p.setAttribute('id', 'creator-user_name');
+    p.textContent = profile.profiles.user_name;
+
+    const img = document.createElement('img');
+    img.setAttribute('id', 'user-avatar');
+    img.src = profile.profiles.avatar_url;
+    img.alt = `${profile.profiles.user_name} avatar`;
+    img.classList.add('avatar');
+
+    div.append(p, img);
+
+    return div;
 }
 
 export function renderComment(comment) {
@@ -91,42 +114,9 @@ export function renderComment(comment) {
     return li;
 }
 
-// export function renderAnswer(answer) {
-//     const li = document.createElement('li');
-//     li.classList.add('answer');
-
-//     const pUser = document.createElement('p');
-//     pUser.classList.add('user-name');
-//     pUser.textContent = answer.profiles.user_name;
-
-//     const img = document.createElement('img');
-//     img.classList.add('user-avatar');
-//     img.src = answer.profiles.avatar_url;
-
-//     const pCreatedDate = document.createElement('p');
-//     pCreatedDate.classList.add('timestamp');
-//     pCreatedDate.textContent = new Date(answer.created_at).toLocaleString('en-US', {
-//         day: 'numeric',
-//         month: 'numeric',
-//         year: 'numeric',
-//         hour: 'numeric',
-//         minute: 'numeric',
-//     });
-
-//     const divHead = document.createElement('div');
-//     divHead.classList.add('user-info');
-//     divHead.append(pCreatedDate, pUser, img);
-
-//     const answerDiv = document.createElement('div');
-//     answerDiv.classList.add('answer-content');
-
-//     const pAnswer = document.createElement('p');
-//     pAnswer.textContent = answer.answer;
-
-//     const pCode = document.createElement('p');
-//     pCode.answerDiv.append(pAnswer);
-
-//     li.append(divHead, answerDiv);
-
-//     return li;
-// }
+export function renderCategoryOption(category) {
+    const option = document.createElement('option');
+    option.value = category;
+    option.textContent = category;
+    return option;
+}

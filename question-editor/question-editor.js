@@ -2,17 +2,23 @@
 // this will check if we have a user and set signout link if it exists
 import '../auth/user.js';
 import { createQuestion, uploadImage } from '../fetch-utils.js';
+import { signOutUser } from '../fetch-utils.js';
 
 /* Get DOM Elements */
 const questionForm = document.getElementById('question-form');
 const errorDisplay = document.getElementById('error-display');
 const imageInput = document.getElementById('image-input');
 const imagePreview = document.getElementById('image-preview');
+const navSignout = document.getElementById('nav-signout');
 
 /* State */
 let error = null;
 
 /* Events */
+
+navSignout.addEventListener('click', () => {
+    signOutUser();
+});
 
 questionForm.addEventListener('submit', async (e) => {
     e.preventDefault();
