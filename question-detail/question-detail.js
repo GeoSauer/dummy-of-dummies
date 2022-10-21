@@ -9,6 +9,7 @@ import {
     getQuestionCreator,
 } from '../fetch-utils.js';
 import { renderComment, renderQuestionCreator } from '../render-utils.js';
+import { signOutUser } from '../fetch-utils.js';
 
 //DOM Elements
 const questionTitle = document.getElementById('question-title');
@@ -28,6 +29,7 @@ const errorDisplay = document.getElementById('error-display');
 const commentForm = document.getElementById('comment-form');
 const commentButton = document.getElementById('comment-button');
 const commentList = document.getElementById('comment-list');
+const navSignout = document.getElementById('nav-signout');
 
 //State
 let error = null;
@@ -35,6 +37,11 @@ let question = null;
 let profile = null;
 
 //Events
+
+navSignout.addEventListener('click', () => {
+    signOutUser();
+});
+
 window.addEventListener('load', async () => {
     const searchParams = new URLSearchParams(location.search);
     const id = searchParams.get('id');
